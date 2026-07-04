@@ -49,6 +49,18 @@ function splitStat(point: string): { num: string; lab: string } {
   return m ? { num: m[1].trim(), lab: m[2] } : { num: '', lab: point };
 }
 
+// Note du thermomètre : le complément "brise" n'apparaît que si une valeur de brise
+// fiable est renseignée (littoral). Les destinations de lac/montagne restent neutres.
+const tempDiff =
+  c.reference_july_max != null && c.july_max_avg != null
+    ? c.reference_july_max - c.july_max_avg
+    : null;
+const thermoNote =
+  tempDiff != null
+    ? `Même ensoleillement généreux, ${tempDiff} °C de moins en moyenne qu'en ${c.reference_city}` +
+      (c.breeze_kmh != null ? ', et une brise qui rafraîchit les après-midis.' : '.')
+    : '';
+
 const jsonLd = [touristDestination(dest)];
 ---
 
@@ -80,7 +92,7 @@ const jsonLd = [touristDestination(dest)];
             cityTemp={c.july_max_avg}
             referenceCity={c.reference_city}
             referenceTemp={c.reference_july_max}
-            note={`Même ensoleillement généreux, ${c.reference_july_max - c.july_max_avg} °C de moins en moyenne qu'en ${c.reference_city}, et une brise qui rafraîchit les après-midis.`}
+            note={thermoNote}
           />
         )
       }
