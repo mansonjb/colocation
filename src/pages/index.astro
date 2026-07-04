@@ -2,12 +2,20 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import DestinationCard from '../components/DestinationCard.astro';
+import DestinationImage from '../components/DestinationImage.astro';
 import CoolcationThermometer from '../components/CoolcationThermometer.astro';
 
 const destinations = await getCollection('destinations');
-const published = destinations.filter((d) => !d.data.draft);
-const upcoming = destinations.filter((d) => d.data.draft).slice(0, 5);
+const published = destinations
+  .filter((d) => !d.data.draft)
+  .sort((a, b) => a.data.name.localeCompare(b.data.name));
+const upcoming = destinations.filter((d) => d.data.draft).slice(0, 4);
 const featured = published[0];
+
+// Mosaïque : un aperçu photo des destinations qui ont une image (vedettes + à venir)
+const mosaic = [...published, ...destinations.filter((d) => d.data.draft)]
+  .filter((d) => d.data.hero_image)
+  .slice(0, 6);
 
 const title = 'Cap au Frais : où dormir au soleil, sans la fournaise (coolcation)';
 const description =
@@ -43,6 +51,34 @@ const description =
       }
     </div>
   </header>
+
+  {
+    mosaic.length >= 3 && (
+      <section class="mosaic-sec">
+        <div class="wrap">
+          <div class="mosaic reveal">
+            {mosaic.map((d, i) => (
+              <a
+                class:list={['mtile', { big: i === 0 }]}
+                href={d.data.draft ? '/destinations/' : `/destinations/${d.data.slug}/`}
+                aria-label={`Découvrir ${d.data.name}`}
+              >
+                <DestinationImage image={d.data.hero_image!} variant="card" />
+                <span class="mcap">
+                  <span class="mname">{d.data.name}</span>
+                  <span class="mcountry">{d.data.country}</span>
+                </span>
+              </a>
+            ))}
+          </div>
+          <p class="mosaic-note reveal">
+            Du littoral atlantique aux lacs alpins : des lieux qui gardent le soleil et perdent la
+            canicule.
+          </p>
+        </div>
+      </section>
+    )
+  }
 
   <section class="sec">
     <div class="wrap">
@@ -95,6 +131,7 @@ const description =
               tagline={d.data.hero_tagline}
               julyMax={d.data.coolcation.july_max_avg}
               href={`/destinations/${d.data.slug}/`}
+              image={d.data.hero_image}
             />
           ))
         }
@@ -106,6 +143,7 @@ const description =
               tagline={d.data.region}
               julyMax={d.data.coolcation.july_max_avg}
               draft
+              image={d.data.hero_image}
             />
           ))
         }
@@ -154,6 +192,86 @@ const description =
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
+    }
+    .mosaic-sec {
+      padding: 8px 0 8px;
+    }
+    .mosaic {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 150px;
+      gap: 12px;
+    }
+    .mtile {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      text-decoration: none;
+      display: block;
+    }
+    .mtile.big {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+    .mtile :global(.dimg.card) {
+      height: 100%;
+    }
+    .mtile :global(.dimg.card img) {
+      height: 100%;
+      width: 100%;
+      aspect-ratio: auto;
+      border-radius: 0;
+      transition: transform 0.4s ease;
+    }
+    .mtile:hover :global(.dimg.card img) {
+      transform: scale(1.05);
+    }
+    .mtile::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 45%, rgba(11, 60, 73, 0.72));
+    }
+    .mcap {
+      position: absolute;
+      left: 16px;
+      bottom: 14px;
+      z-index: 1;
+      color: var(--foam);
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+    .mname {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 1.15rem;
+    }
+    .mtile.big .mname {
+      font-size: 1.6rem;
+    }
+    .mcountry {
+      font-family: 'Spline Sans Mono', monospace;
+      font-size: 0.66rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+    .mosaic-note {
+      margin-top: 16px;
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      max-width: 60ch;
+    }
+    @media (max-width: 760px) {
+      .mosaic {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 130px;
+      }
+      .mtile.big {
+        grid-column: span 2;
+        grid-row: span 1;
+      }
     }
     .points {
       display: grid;
