@@ -1,0 +1,34 @@
+{
+  "slug": "chambery",
+  "name": "Chambéry",
+  "country": "France",
+  "region": "Montagne & lac",
+  "coordinates": {
+    "lat": null,
+    "lng": null
+  },
+  "hero_tagline": "",
+  "intro": "",
+  "coolcation": {
+    "sun_hours_year": null,
+    "july_max_avg": null,
+    "reference_city": "",
+    "reference_july_max": null,
+    "breeze_kmh": null,
+    "proof_points": []
+  },
+  "season": {
+    "ideal_months": [],
+    "peak_months": []
+  },
+  "neighborhoods": [],
+  "profiles": [],
+  "faq": [],
+  "related_slugs": [],
+  "affiliate": {
+    "booking_search_url": ""
+  },
+  "updated": "2026-07-04",
+  "author": "La rédaction Cap au Frais",
+  "draft": true
+}
