@@ -1,0 +1,47 @@
+---
+import { LOCALES, SITE_NAME } from '../lib/site';
+
+interface Props {
+  title: string;
+  description: string;
+  /** JSON-LD additionnels (BreadcrumbList, FAQPage, TouristDestination, Article...) */
+  jsonLd?: object[];
+  ogType?: 'website' | 'article';
+}
+
+const { title, description, jsonLd = [], ogType = 'website' } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+<link rel="sitemap" href="/sitemap-index.xml" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+{/* hreflang : prêt i18n. Une seule locale active aujourd'hui. */}
+{LOCALES.map((l) => <link rel="alternate" hreflang={l.code} href={canonical} />)}
+<link rel="alternate" hreflang="x-default" href={canonical} />
+
+{/* OpenGraph + Twitter */}
+<meta property="og:type" content={ogType} />
+<meta property="og:site_name" content={SITE_NAME} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:locale" content="fr_FR" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+
+{/* Fonts */}
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&family=Spline+Sans+Mono:wght@500;600&display=swap"
+  rel="stylesheet"
+/>
+
+{jsonLd.map((block) => <script type="application/ld+json" set:html={JSON.stringify(block)} />)}

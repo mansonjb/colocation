@@ -1,0 +1,146 @@
+/* ============ Tokens Cap au Frais (identité maritime fraîche) ============ */
+:root {
+  --atlantic: #0b3c49; /* teal-navy profond : texte fort, sections sombres */
+  --seaglass: #5fb4a2; /* accent menthe : le "cool" de coolcation */
+  --seaglass-deep: #3e8c7c;
+  --sandstone: #f2ebdd; /* pierre pâle chaude : fonds */
+  --foam: #fbfaf6; /* fond principal */
+  --ochre: #d98a3d; /* accent chaud : UNIQUEMENT le côté chaud du thermomètre / haute saison */
+  --ink: #16282e;
+  --ink-soft: #4b5e63;
+  --line: rgba(11, 60, 73, 0.14);
+  --radius: 14px;
+  --maxw: 1080px;
+}
+
+/* ============ Reset léger ============ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+img,
+svg {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+body {
+  font-family: 'Hanken Grotesk', system-ui, sans-serif;
+  background: var(--foam);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: inherit;
+}
+h1,
+h2,
+h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+}
+
+/* Focus clavier visible partout (plancher accessibilité) */
+:focus-visible {
+  outline: 3px solid var(--seaglass-deep);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ============ Utilitaires partagés ============ */
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.eyebrow {
+  font-family: 'Spline Sans Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--seaglass-deep);
+  font-weight: 600;
+}
+.sec {
+  padding: 64px 0;
+}
+.sec-head {
+  max-width: 60ch;
+}
+.sec-head h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  margin: 10px 0 12px;
+}
+.sec-head p {
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.96rem;
+  text-decoration: none;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+.btn-primary {
+  background: var(--atlantic);
+  color: var(--foam);
+  box-shadow: 0 8px 22px rgba(11, 60, 73, 0.22);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(11, 60, 73, 0.28);
+}
+.btn-ghost {
+  border: 1.5px solid var(--line);
+  color: var(--atlantic);
+  background: transparent;
+}
+.btn-ghost:hover {
+  border-color: var(--atlantic);
+}
+.lede {
+  font-size: 1.18rem;
+  color: var(--ink-soft);
+}
+
+/* ============ Reveal au scroll (sobre, en amélioration progressive) ============
+   Le contenu est visible par défaut (no-JS, IO indisponible...). Le script de layout
+   ajoute .reveal-ready sur <html> juste avant d'observer : seuls ces contextes
+   masquent puis révèlent. */
+html.reveal-ready .reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+html.reveal-ready .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  html.reveal-ready .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

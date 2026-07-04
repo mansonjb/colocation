@@ -1,0 +1,154 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import '../styles/global.css';
+import { SITE_NAME, SITE_TAGLINE } from '../lib/site';
+
+interface Props {
+  title: string;
+  description: string;
+  jsonLd?: object[];
+  ogType?: 'website' | 'article';
+}
+
+const { title, description, jsonLd, ogType } = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <BaseHead title={title} description={description} jsonLd={jsonLd} ogType={ogType} />
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="wrap">
+        <a class="brand" href="/">Cap au <span>Frais</span></a>
+        <nav aria-label="Navigation principale">
+          <a href="/destinations/">Destinations</a>
+          <a href="/guides/">Guides</a>
+          <a href="/thematiques/coolcation/">La coolcation</a>
+          <a href="/a-propos/">À propos</a>
+        </nav>
+      </div>
+    </div>
+
+    <slot />
+
+    <footer>
+      <div class="wrap">
+        <p class="brand-foot">Cap au <span>Frais</span></p>
+        <p class="foot-note">{SITE_NAME} : {SITE_TAGLINE.toLowerCase()}.</p>
+        <nav class="foot-nav" aria-label="Pied de page">
+          <a href="/destinations/">Destinations</a>
+          <a href="/guides/">Guides</a>
+          <a href="/thematiques/coolcation/">Qu'est-ce que la coolcation ?</a>
+          <a href="/a-propos/">À propos & méthodo</a>
+          <a href="/mentions-affiliation/">Mentions d'affiliation</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+      // Reveal au scroll en amélioration progressive : sans IO fonctionnel, tout reste visible.
+      const els = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && els.length) {
+        document.documentElement.classList.add('reveal-ready');
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.classList.add('in');
+                io.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.12 },
+        );
+        els.forEach((el) => io.observe(el));
+        // Filet de sécurité : si l'observer n'a rien révélé après 1 s (environnement
+        // où IO existe mais ne fire pas), on montre tout plutôt qu'une page vide.
+        setTimeout(() => {
+          if (!document.querySelector('.reveal.in')) {
+            els.forEach((el) => el.classList.add('in'));
+          }
+        }, 1000);
+      }
+    </script>
+
+    <style>
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(251, 250, 246, 0.86);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--line);
+      }
+      .topbar .wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 60px;
+      }
+      .brand {
+        font-family: 'Fraunces', serif;
+        font-weight: 600;
+        font-size: 1.15rem;
+        letter-spacing: -0.02em;
+        text-decoration: none;
+      }
+      .brand span {
+        color: var(--seaglass-deep);
+      }
+      .topbar nav {
+        display: flex;
+        gap: 22px;
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+      .topbar nav a {
+        text-decoration: none;
+        color: var(--ink-soft);
+      }
+      .topbar nav a:hover {
+        color: var(--atlantic);
+      }
+      @media (max-width: 680px) {
+        .topbar nav {
+          gap: 14px;
+          font-size: 0.82rem;
+        }
+      }
+      footer {
+        padding: 48px 0;
+        border-top: 1px solid var(--line);
+        margin-top: 40px;
+      }
+      .brand-foot {
+        font-family: 'Fraunces', serif;
+        font-weight: 600;
+        font-size: 1.05rem;
+      }
+      .brand-foot span {
+        color: var(--seaglass-deep);
+      }
+      .foot-note {
+        font-size: 0.8rem;
+        color: var(--ink-soft);
+        margin: 8px 0 18px;
+      }
+      .foot-nav {
+        display: flex;
+        gap: 14px 22px;
+        flex-wrap: wrap;
+        font-size: 0.88rem;
+      }
+      .foot-nav a {
+        color: var(--atlantic);
+        text-decoration: none;
+      }
+      .foot-nav a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </body>
+</html>
