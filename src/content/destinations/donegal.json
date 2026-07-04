@@ -30,5 +30,17 @@
   },
   "updated": "2026-07-04",
   "author": "La rédaction Cap au Frais",
-  "draft": true
+  "draft": true,
+  "hero_image": {
+    "src": "/images/destinations/donegal.jpg",
+    "card": "/images/destinations/card/donegal.jpg",
+    "alt": "La côte découpée du Donegal, en Irlande",
+    "width": 1400,
+    "height": 1045,
+    "card_width": 760,
+    "card_height": 567,
+    "credit_author": "Philip Cornwall",
+    "credit_license": "CC BY-SA 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Natural_Arch%2C_Donegal_Coast_-_geograph.org.uk_-_6555714.jpg"
+  }
 }

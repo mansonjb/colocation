@@ -30,5 +30,17 @@
   },
   "updated": "2026-07-04",
   "author": "La rédaction Cap au Frais",
-  "draft": true
+  "draft": true,
+  "hero_image": {
+    "src": "/images/destinations/highlands-ecossais.jpg",
+    "card": "/images/destinations/card/highlands-ecossais.jpg",
+    "alt": "Un loch niché entre les montagnes des Highlands écossais",
+    "width": 1400,
+    "height": 814,
+    "card_width": 760,
+    "card_height": 442,
+    "credit_author": "Michal Klajban",
+    "credit_license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:A_small_loch_in_the_saddle_between_Beinn_an_Dothaidh_and_Beinn_Dorain%2C_Scotland_01.jpg"
+  }
 }

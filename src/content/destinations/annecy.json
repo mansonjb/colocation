@@ -30,5 +30,17 @@
   },
   "updated": "2026-07-04",
   "author": "La rédaction Cap au Frais",
-  "draft": true
+  "draft": true,
+  "hero_image": {
+    "src": "/images/destinations/annecy.jpg",
+    "card": "/images/destinations/card/annecy.jpg",
+    "alt": "Le lac d'Annecy aux eaux turquoise, entouré de montagnes",
+    "width": 1400,
+    "height": 933,
+    "card_width": 760,
+    "card_height": 506,
+    "credit_author": "Georges Seguin (Okki)",
+    "credit_license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Rose_Perle_du_Lac_Annecy_20070601.jpg"
+  }
 }

@@ -1,0 +1,92 @@
+---
+/**
+ * Image de destination avec attributs obligatoires (alt, width, height, loading).
+ * Les données viennent du champ `hero_image` du contenu, jamais en dur.
+ * variant="hero" : grande image + crédit. variant="card" : vignette compacte.
+ * eager : désactive le lazy-loading (image au-dessus de la ligne de flottaison / LCP).
+ */
+interface Props {
+  image: {
+    src: string;
+    card: string;
+    alt: string;
+    width: number;
+    height: number;
+    card_width: number;
+    card_height: number;
+    credit_author?: string;
+    credit_license?: string;
+    source_url?: string;
+  };
+  variant?: 'hero' | 'card';
+  eager?: boolean;
+}
+
+const { image, variant = 'hero', eager = false } = Astro.props;
+const isHero = variant === 'hero';
+const src = isHero ? image.src : image.card;
+const w = isHero ? image.width : image.card_width;
+const h = isHero ? image.height : image.card_height;
+const hasCredit = isHero && image.credit_author;
+---
+
+<figure class:list={['dimg', variant]}>
+  <img
+    src={src}
+    alt={image.alt}
+    width={w}
+    height={h}
+    loading={eager ? 'eager' : 'lazy'}
+    decoding="async"
+    data-eager={eager ? '' : undefined}
+  />
+  {
+    hasCredit && (
+      <figcaption>
+        Photo :{' '}
+        {image.source_url ? (
+          <a href={image.source_url} target="_blank" rel="noopener nofollow">
+            {image.credit_author}
+          </a>
+        ) : (
+          image.credit_author
+        )}
+        {image.credit_license ? ` / ${image.credit_license}` : ''}
+      </figcaption>
+    )
+  }
+</figure>
+
+<style>
+  .dimg {
+    margin: 0;
+  }
+  .dimg img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .dimg.hero img {
+    border-radius: var(--radius);
+    aspect-ratio: 16 / 9;
+    box-shadow: 0 24px 50px -28px rgba(11, 60, 73, 0.55);
+  }
+  .dimg.card img {
+    aspect-ratio: 3 / 2;
+    border-radius: 10px;
+  }
+  figcaption {
+    font-family: 'Spline Sans Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+    color: var(--ink-soft);
+    margin-top: 8px;
+    text-align: right;
+  }
+  figcaption a {
+    color: var(--ink-soft);
+  }
+  figcaption a:hover {
+    color: var(--atlantic);
+  }
+</style>

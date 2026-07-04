@@ -30,5 +30,17 @@
   },
   "updated": "2026-07-04",
   "author": "La rédaction Cap au Frais",
-  "draft": true
+  "draft": true,
+  "hero_image": {
+    "src": "/images/destinations/saint-malo.jpg",
+    "card": "/images/destinations/card/saint-malo.jpg",
+    "alt": "Les remparts de Saint-Malo face à la mer",
+    "width": 1400,
+    "height": 931,
+    "card_width": 760,
+    "card_height": 505,
+    "credit_author": "Pline",
+    "credit_license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Rempart-St-Malo-cote-mer-DS.jpg"
+  }
 }

@@ -30,5 +30,17 @@
   },
   "updated": "2026-07-04",
   "author": "La rédaction Cap au Frais",
-  "draft": true
+  "draft": true,
+  "hero_image": {
+    "src": "/images/destinations/bled.jpg",
+    "card": "/images/destinations/card/bled.jpg",
+    "alt": "Le lac de Bled, son île et son église, en Slovénie",
+    "width": 1400,
+    "height": 444,
+    "card_width": 760,
+    "card_height": 241,
+    "credit_author": "Krzysztof Golik",
+    "credit_license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bled_Island_%26_Bled_Castle_%281%29.jpg"
+  }
 }

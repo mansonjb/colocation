@@ -30,5 +30,17 @@
   },
   "updated": "2026-07-04",
   "author": "La rédaction Cap au Frais",
-  "draft": true
+  "draft": true,
+  "hero_image": {
+    "src": "/images/destinations/chambery.jpg",
+    "card": "/images/destinations/card/chambery.jpg",
+    "alt": "Les toits du centre ancien de Chambéry",
+    "width": 1400,
+    "height": 1050,
+    "card_width": 760,
+    "card_height": 570,
+    "credit_author": "Florian Pépellin",
+    "credit_license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Toits_centre_ancien_Chamb%C3%A9ry_%282014%29.JPG"
+  }
 }

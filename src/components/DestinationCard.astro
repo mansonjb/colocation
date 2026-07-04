@@ -1,4 +1,6 @@
 ---
+import DestinationImage from './DestinationImage.astro';
+
 /** Carte destination pour les index et l'accueil. Les fiches draft s'affichent en "bientôt". */
 interface Props {
   name: string;
@@ -7,19 +9,48 @@ interface Props {
   julyMax?: number | null;
   href?: string;
   draft?: boolean;
+  image?: {
+    src: string;
+    card: string;
+    alt: string;
+    width: number;
+    height: number;
+    card_width: number;
+    card_height: number;
+  };
 }
 
-const { name, country, tagline, julyMax, href, draft = false } = Astro.props;
+const { name, country, tagline, julyMax, href, draft = false, image } = Astro.props;
 const Tag = draft ? 'div' : 'a';
 ---
 
-<Tag class:list={['dcard', 'reveal', { draft }]} href={draft ? undefined : href} data-country={country}>
-  <span class="dtag">{country}</span>
-  <span class="dname">{name}</span>
-  {tagline && <span class="dtagline">{tagline}</span>}
-  <span class="dfoot">
-    {julyMax != null ? <span class="dtemp">~{julyMax} °C en juillet</span> : <span class="dtemp muted">données climat à venir</span>}
-    {draft ? <span class="soon">bientôt</span> : <span class="go">Lire le guide →</span>}
+<Tag
+  class:list={['dcard', 'reveal', { draft, 'has-img': image }]}
+  href={draft ? undefined : href}
+  data-country={country}
+>
+  {
+    image && (
+      <span class="dcard-img">
+        <DestinationImage image={image} variant="card" />
+        {draft && <span class="soon-badge">bientôt</span>}
+      </span>
+    )
+  }
+  <span class="dcard-body">
+    <span class="dtag">{country}</span>
+    <span class="dname">{name}</span>
+    {tagline && <span class="dtagline">{tagline}</span>}
+    <span class="dfoot">
+      {
+        julyMax != null ? (
+          <span class="dtemp">~{julyMax} °C en juillet</span>
+        ) : (
+          <span class="dtemp muted">données climat à venir</span>
+        )
+      }
+      {draft ? !image && <span class="soon">bientôt</span> : <span class="go">Lire le guide →</span>}
+    </span>
   </span>
 </Tag>
 
@@ -33,16 +64,60 @@ const Tag = draft ? 'div' : 'a';
     border-radius: var(--radius);
     padding: 22px;
     text-decoration: none;
+    overflow: hidden;
     transition:
       transform 0.18s ease,
       box-shadow 0.18s ease;
+  }
+  /* Carte avec image : image pleine largeur en haut, corps rembourré */
+  .dcard.has-img {
+    padding: 0;
+    gap: 0;
+  }
+  .dcard-img {
+    position: relative;
+    display: block;
+  }
+  .dcard.has-img :global(.dimg.card img) {
+    border-radius: 0;
+    aspect-ratio: 16 / 10;
+  }
+  .dcard-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px 22px;
+    flex: 1;
+  }
+  .soon-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    font-family: 'Spline Sans Mono', monospace;
+    font-size: 0.64rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    color: #3a2412;
+    background: var(--ochre);
+    padding: 5px 10px;
+    border-radius: 999px;
   }
   a.dcard:hover {
     transform: translateY(-3px);
     box-shadow: 0 16px 34px -20px rgba(11, 60, 73, 0.5);
   }
+  a.dcard:hover :global(.dimg.card img) {
+    filter: saturate(1.05);
+  }
   .dcard.draft {
-    opacity: 0.62;
+    opacity: 0.72;
+  }
+  .dcard.draft.has-img {
+    opacity: 1;
+  }
+  .dcard.draft.has-img .dcard-body {
+    opacity: 0.72;
   }
   .dtag {
     font-family: 'Spline Sans Mono', monospace;

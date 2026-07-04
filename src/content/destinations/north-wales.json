@@ -30,5 +30,17 @@
   },
   "updated": "2026-07-04",
   "author": "La rédaction Cap au Frais",
-  "draft": true
+  "draft": true,
+  "hero_image": {
+    "src": "/images/destinations/north-wales.jpg",
+    "card": "/images/destinations/card/north-wales.jpg",
+    "alt": "Les montagnes de Snowdonia, au pays de Galles",
+    "width": 1400,
+    "height": 644,
+    "card_width": 760,
+    "card_height": 349,
+    "credit_author": "Berit from Redhill/Surrey, UK",
+    "credit_license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mountains%2C_Snowdonia%2C_Wales_%288270925107%29.jpg"
+  }
 }

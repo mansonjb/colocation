@@ -3,7 +3,10 @@
   "name": "La Rochelle",
   "country": "France",
   "region": "Côte atlantique",
-  "coordinates": { "lat": 46.1603, "lng": -1.1511 },
+  "coordinates": {
+    "lat": 46.1603,
+    "lng": -1.1511
+  },
   "hero_tagline": "au frais sous le même soleil que le Sud",
   "intro": "Plus de 2 100 heures de soleil par an, mais des étés tempérés par la brise atlantique. On vous dit dans quel quartier poser vos valises selon votre façon de voyager.",
   "coolcation": {
@@ -19,8 +22,15 @@
     ]
   },
   "season": {
-    "ideal_months": ["Mai", "Juin", "Sept"],
-    "peak_months": ["Juil", "Août"]
+    "ideal_months": [
+      "Mai",
+      "Juin",
+      "Sept"
+    ],
+    "peak_months": [
+      "Juil",
+      "Août"
+    ]
   },
   "neighborhoods": [
     {
@@ -103,12 +113,28 @@
       "a": "Pour 1 à 3 nuits en couple, l'hôtel au Vieux-Port est imbattable en emplacement. Pour une famille ou un séjour d'une semaine et plus, la location (Gabut, Minimes, Tasdon) revient souvent moins cher et offre plus d'espace."
     }
   ],
-  "related_slugs": ["biarritz", "saint-malo", "annecy"],
+  "related_slugs": [
+    "biarritz",
+    "saint-malo",
+    "annecy"
+  ],
   "affiliate": {
     "booking_search_url": "https://www.booking.com/searchresults.fr.html?ss=La+Rochelle",
     "hometogo_search_url": "https://www.hometogo.fr/la-rochelle/"
   },
   "updated": "2026-07-04",
   "author": "La rédaction Cap au Frais",
-  "draft": false
+  "draft": false,
+  "hero_image": {
+    "src": "/images/destinations/la-rochelle.jpg",
+    "card": "/images/destinations/card/la-rochelle.jpg",
+    "alt": "Le Vieux-Port de La Rochelle et ses tours médiévales au bord de l'eau",
+    "width": 1400,
+    "height": 835,
+    "card_width": 760,
+    "card_height": 453,
+    "credit_author": "Jebulon",
+    "credit_license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Entrance_La_Rochelle_old_harbor.jpg"
+  }
 }

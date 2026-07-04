@@ -10,6 +10,7 @@ import FaqAccordion from '../../components/FaqAccordion.astro';
 import AffiliateLink from '../../components/AffiliateLink.astro';
 import Disclosure from '../../components/Disclosure.astro';
 import RelatedLinks from '../../components/RelatedLinks.astro';
+import DestinationImage from '../../components/DestinationImage.astro';
 import { touristDestination } from '../../lib/jsonld';
 
 export async function getStaticPaths() {
@@ -84,6 +85,13 @@ const jsonLd = [touristDestination(dest)];
         )
       }
     </div>
+    {
+      dest.hero_image && (
+        <div class="wrap hero-photo reveal">
+          <DestinationImage image={dest.hero_image} variant="hero" eager />
+        </div>
+      )
+    }
   </header>
 
   {
@@ -232,6 +240,9 @@ const jsonLd = [touristDestination(dest)];
     display: flex;
     gap: 14px;
     flex-wrap: wrap;
+  }
+  .hero-photo {
+    margin-top: 44px;
   }
   .proof {
     padding: 54px 0;

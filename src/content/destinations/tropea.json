@@ -30,5 +30,17 @@
   },
   "updated": "2026-07-04",
   "author": "La rédaction Cap au Frais",
-  "draft": true
+  "draft": true,
+  "hero_image": {
+    "src": "/images/destinations/tropea.jpg",
+    "card": "/images/destinations/card/tropea.jpg",
+    "alt": "La plage de Tropea et la mer Tyrrhénienne, en Calabre",
+    "width": 1400,
+    "height": 934,
+    "card_width": 760,
+    "card_height": 507,
+    "credit_author": "Norbert Nagel",
+    "credit_license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Beach_in_Tropea_-_Calabria_-_Italy_-_July_17th_2013_-_02.jpg"
+  }
 }

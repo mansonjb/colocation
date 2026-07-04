@@ -36,6 +36,20 @@ const destinations = defineCollection({
       .default({ lat: null, lng: null }),
     hero_tagline: z.string().default(''),
     intro: z.string().default(''),
+    hero_image: z
+      .object({
+        src: z.string(), // /images/destinations/{slug}.jpg (hero)
+        card: z.string(), // /images/destinations/card/{slug}.jpg (vignette)
+        alt: z.string(), // obligatoire : échec de build si vide
+        width: z.number(),
+        height: z.number(),
+        card_width: z.number(),
+        card_height: z.number(),
+        credit_author: z.string().default(''),
+        credit_license: z.string().default(''),
+        source_url: z.string().default(''),
+      })
+      .optional(),
     coolcation: z
       .object({
         sun_hours_year: z.number().nullable().default(null),

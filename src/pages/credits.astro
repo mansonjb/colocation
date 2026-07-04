@@ -1,0 +1,104 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const withPhoto = (await getCollection('destinations'))
+  .filter((d) => d.data.hero_image)
+  .sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+const title = 'Crédits photo | Cap au Frais';
+const description =
+  'Les crédits et licences des photographies utilisées sur Cap au Frais. Images issues de Wikimedia Commons sous licences Creative Commons ou domaine public.';
+---
+
+<Base title={title} description={description}>
+  <div class="wrap">
+    <Breadcrumbs
+      crumbs={[
+        { name: 'Accueil', href: '/' },
+        { name: 'Crédits photo', href: '/credits/' },
+      ]}
+    />
+    <article class="credits">
+      <p class="eyebrow">Attribution</p>
+      <h1>Crédits photo</h1>
+      <p class="intro">
+        Les photographies des destinations proviennent de Wikimedia Commons, sous licence Creative
+        Commons ou dans le domaine public. Merci à leurs auteurs. Chaque image renvoie vers sa page
+        source et sa licence.
+      </p>
+
+      <ul class="clist">
+        {
+          withPhoto.map((d) => {
+            const img = d.data.hero_image!;
+            return (
+              <li>
+                <span class="cplace">{d.data.name}</span>
+                <span class="cmeta">
+                  {img.source_url ? (
+                    <a href={img.source_url} target="_blank" rel="noopener nofollow">
+                      {img.alt}
+                    </a>
+                  ) : (
+                    img.alt
+                  )}
+                  {' — '}
+                  {img.credit_author}
+                  {img.credit_license ? ` (${img.credit_license})` : ''}
+                </span>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </article>
+  </div>
+
+  <style>
+    .credits {
+      max-width: 74ch;
+      padding: 34px 0 10px;
+    }
+    .credits h1 {
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      margin: 12px 0 16px;
+    }
+    .intro {
+      color: var(--ink-soft);
+      margin-bottom: 24px;
+      max-width: 62ch;
+    }
+    .clist {
+      list-style: none;
+      border-top: 1px solid var(--line);
+    }
+    .clist li {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 20px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+      align-items: baseline;
+    }
+    .cplace {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+    .cmeta {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+    }
+    .cmeta a {
+      color: var(--atlantic);
+    }
+    @media (max-width: 560px) {
+      .clist li {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+    }
+  </style>
+</Base>
