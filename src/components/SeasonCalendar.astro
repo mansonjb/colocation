@@ -1,0 +1,139 @@
+---
+/**
+ * Bandeau des épaules de saison : colore les mois selon les données `season`.
+ * Vert d'eau = fenêtre idéale, ocre = haute saison, neutre = hors fenêtre.
+ */
+interface Props {
+  idealMonths: string[];
+  peakMonths: string[];
+  title?: string;
+  text?: string;
+}
+
+const MONTHS = ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Août', 'Sept', 'Oct', 'Nov', 'Déc'];
+
+const { idealMonths, peakMonths, title, text } = Astro.props;
+
+// On n'affiche que la fenêtre utile : du 1er mois marqué -1 au dernier marqué +1 (bornés à l'année)
+const marked = MONTHS.map((m, i) => ({ m, i })).filter(
+  ({ m }) => idealMonths.includes(m) || peakMonths.includes(m),
+);
+const start = marked.length ? Math.max(0, marked[0].i - 1) : 3;
+const end = marked.length ? Math.min(11, marked[marked.length - 1].i + 1) : 8;
+const shown = MONTHS.slice(start, end + 1);
+
+function stateOf(m: string): { cls: string; label: string } {
+  if (idealMonths.includes(m)) return { cls: 'sweet', label: 'idéal' };
+  if (peakMonths.includes(m)) return { cls: 'peak', label: 'affluence' };
+  return { cls: '', label: 'frais' };
+}
+---
+
+<div class="cal reveal">
+  <p class="eyebrow cal-eyebrow">Le bon timing</p>
+  <h3>{title ?? 'Visez les épaules de saison'}</h3>
+  {text && <p>{text}</p>}
+  <ul class="months" role="list" aria-label="Calendrier des saisons, mois par mois">
+    {
+      shown.map((m) => {
+        const s = stateOf(m);
+        return (
+          <li class:list={['mo', s.cls]}>
+            {m}
+            <span>{s.label}</span>
+          </li>
+        );
+      })
+    }
+  </ul>
+  <div class="cal-legend">
+    <span><i class="i-sweet"></i>Fenêtre idéale (doux, calme, abordable)</span>
+    <span><i class="i-peak"></i>Haute saison (réserver tôt)</span>
+  </div>
+</div>
+
+<style>
+  .cal {
+    background: var(--atlantic);
+    color: var(--foam);
+    border-radius: var(--radius);
+    padding: 40px;
+    margin-top: 34px;
+  }
+  .cal-eyebrow {
+    color: var(--seaglass);
+  }
+  .cal h3 {
+    color: var(--foam);
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+  .cal p {
+    color: rgba(251, 250, 246, 0.78);
+    max-width: 54ch;
+  }
+  .months {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+    margin-top: 26px;
+    list-style: none;
+  }
+  @media (max-width: 680px) {
+    .months {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .mo {
+    text-align: center;
+    padding: 12px 6px;
+    border-radius: 10px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    background: rgba(251, 250, 246, 0.08);
+  }
+  .mo span {
+    display: block;
+    font-family: 'Spline Sans Mono', monospace;
+    font-size: 0.66rem;
+    font-weight: 500;
+    color: rgba(251, 250, 246, 0.6);
+    margin-top: 3px;
+  }
+  .mo.sweet {
+    background: var(--seaglass);
+    color: var(--atlantic);
+  }
+  .mo.sweet span {
+    color: rgba(22, 40, 46, 0.7);
+  }
+  .mo.peak {
+    background: var(--ochre);
+    color: #3a2412;
+  }
+  .mo.peak span {
+    color: rgba(58, 36, 18, 0.7);
+  }
+  .cal-legend {
+    display: flex;
+    gap: 18px;
+    margin-top: 18px;
+    font-size: 0.8rem;
+    color: rgba(251, 250, 246, 0.78);
+    flex-wrap: wrap;
+  }
+  .cal-legend i {
+    width: 11px;
+    height: 11px;
+    border-radius: 3px;
+    display: inline-block;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+  .i-sweet {
+    background: var(--seaglass);
+  }
+  .i-peak {
+    background: var(--ochre);
+  }
+</style>

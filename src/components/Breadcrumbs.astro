@@ -1,0 +1,54 @@
+---
+import { breadcrumbList, type Crumb } from '../lib/jsonld';
+
+/** Fil d'ariane visible + JSON-LD BreadcrumbList */
+interface Props {
+  crumbs: Crumb[];
+}
+
+const { crumbs } = Astro.props;
+---
+
+<nav class="crumbs" aria-label="Fil d'ariane">
+  <ol>
+    {
+      crumbs.map((c, i) => (
+        <li>
+          {i < crumbs.length - 1 ? <a href={c.href}>{c.name}</a> : <span aria-current="page">{c.name}</span>}
+        </li>
+      ))
+    }
+  </ol>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbList(crumbs, Astro.site))} />
+</nav>
+
+<style>
+  .crumbs {
+    padding: 14px 0 0;
+    font-size: 0.82rem;
+  }
+  ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    color: var(--ink-soft);
+  }
+  li + li::before {
+    content: '›';
+    margin-right: 6px;
+    color: var(--seaglass-deep);
+  }
+  a {
+    color: var(--ink-soft);
+    text-decoration: none;
+  }
+  a:hover {
+    color: var(--atlantic);
+    text-decoration: underline;
+  }
+  span[aria-current] {
+    color: var(--atlantic);
+    font-weight: 500;
+  }
+</style>

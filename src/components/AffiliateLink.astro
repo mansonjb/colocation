@@ -1,0 +1,36 @@
+---
+import { buildAffiliateLink } from '../lib/affiliate';
+
+/**
+ * Wrapper obligatoire pour tout lien monétisé.
+ * Applique systématiquement rel="sponsored nofollow noopener" + target="_blank"
+ * et construit l'URL finale via le helper central (tag partenaire injecté depuis la config).
+ * Si l'URL est vide (fiche squelette), rend un simple <span> : jamais de lien cassé.
+ */
+interface Props {
+  href: string;
+  class?: string;
+  ariaLabel?: string;
+}
+
+const { href, class: className, ariaLabel } = Astro.props;
+const finalHref = buildAffiliateLink(href);
+---
+
+{
+  finalHref ? (
+    <a
+      href={finalHref}
+      class={className}
+      rel="sponsored nofollow noopener"
+      target="_blank"
+      aria-label={ariaLabel}
+    >
+      <slot />
+    </a>
+  ) : (
+    <span class={className}>
+      <slot />
+    </span>
+  )
+}

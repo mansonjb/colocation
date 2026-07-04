@@ -1,0 +1,114 @@
+{
+  "slug": "la-rochelle",
+  "name": "La Rochelle",
+  "country": "France",
+  "region": "Côte atlantique",
+  "coordinates": { "lat": 46.1603, "lng": -1.1511 },
+  "hero_tagline": "au frais sous le même soleil que le Sud",
+  "intro": "Plus de 2 100 heures de soleil par an, mais des étés tempérés par la brise atlantique. On vous dit dans quel quartier poser vos valises selon votre façon de voyager.",
+  "coolcation": {
+    "sun_hours_year": 2110,
+    "july_max_avg": 24,
+    "reference_city": "Côte d'Azur",
+    "reference_july_max": 28,
+    "breeze_kmh": 15,
+    "proof_points": [
+      "2 110 h de soleil par an, davantage que Bordeaux ou Biarritz.",
+      "24 °C de maximale moyenne en juillet : chaud, jamais accablant.",
+      "15 km/h de brise marine moyenne, qui tempère les après-midis d'été."
+    ]
+  },
+  "season": {
+    "ideal_months": ["Mai", "Juin", "Sept"],
+    "peak_months": ["Juil", "Août"]
+  },
+  "neighborhoods": [
+    {
+      "name": "Vieux-Port",
+      "tag": "Cœur historique",
+      "description": "La carte postale rochelaise. Animé, central, idéal sans voiture. Un peu plus cher et vivant le soir.",
+      "best_for": "Première visite, couples sans voiture",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Vieux-Port%2C+La+Rochelle"
+    },
+    {
+      "name": "Le Gabut",
+      "tag": "Port & docks",
+      "description": "Entrepôts en bois colorés, terrasses, ambiance décontractée. Parfait pour les séjours longue durée.",
+      "best_for": "Slow travel, télétravail",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Le+Gabut%2C+La+Rochelle"
+    },
+    {
+      "name": "Les Minimes",
+      "tag": "Plage & nautisme",
+      "description": "Plage, marina, université. Familial et un peu plus aéré ; le bus de mer compense la distance au centre.",
+      "best_for": "Familles, plage à pied",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Les+Minimes%2C+La+Rochelle"
+    },
+    {
+      "name": "Saint-Nicolas",
+      "tag": "Résidentiel",
+      "description": "Le marché, les bistrots de quartier, l'esprit local à deux pas du port. Bon équilibre prix / emplacement.",
+      "best_for": "Ambiance locale, bon rapport qualité-prix",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Saint-Nicolas%2C+La+Rochelle"
+    },
+    {
+      "name": "Tasdon",
+      "tag": "Abordable",
+      "description": "Plus loin du centre mais bien relié à vélo. Le bon choix budget, surtout en haute saison.",
+      "best_for": "Petits budgets, longs séjours",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Tasdon%2C+La+Rochelle"
+    }
+  ],
+  "profiles": [
+    {
+      "profile": "En couple, sans voiture",
+      "neighborhood": "Le Vieux-Port",
+      "reason": "Tout se fait à pied : terrasses, tours médiévales, marché. Réservez côté <b>quartier Saint-Jean-du-Pérot</b> pour les ruelles calmes à deux pas de l'animation.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Vieux-Port%2C+La+Rochelle"
+    },
+    {
+      "profile": "En famille",
+      "neighborhood": "Les Minimes",
+      "reason": "La plage la plus accessible, le plus grand port de plaisance d'Europe et le bus de mer pour rejoindre le centre. Cherchez un <b>appartement avec parking</b>.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Les+Minimes%2C+La+Rochelle"
+    },
+    {
+      "profile": "Petit budget",
+      "neighborhood": "Tasdon / Beauregard",
+      "reason": "À 15 min à vélo du centre, des prix nettement plus doux. Idéal si vous voulez <b>allonger le séjour sans exploser le budget</b> hébergement.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Tasdon%2C+La+Rochelle"
+    },
+    {
+      "profile": "Séjour longue durée / télétravail",
+      "neighborhood": "Le Gabut",
+      "reason": "Anciens entrepôts colorés entre port et centre. Des studios et lofts à la semaine, parfaits pour un <b>slow travel</b> les pieds dans la ville.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Le+Gabut%2C+La+Rochelle"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Fait-il trop chaud à La Rochelle en été ?",
+      "a": "Rarement. La maximale moyenne de juillet tourne autour de 24 °C et la brise marine tempère les après-midis. Des pics de chaleur restent possibles, mais bien plus courts et moins fréquents que sur le pourtour méditerranéen : c'est tout l'intérêt d'une destination coolcation."
+    },
+    {
+      "q": "Faut-il une voiture pour séjourner à La Rochelle ?",
+      "a": "Non pour le centre : le Vieux-Port, Le Gabut et Saint-Nicolas se vivent à pied, et le réseau de vélos jaunes couvre toute la ville. Une voiture devient utile seulement pour rayonner vers l'île de Ré ou Oléron."
+    },
+    {
+      "q": "Quel quartier pour une première fois ?",
+      "a": "Le Vieux-Port ou Saint-Nicolas : centraux, à pied de tout, et le meilleur condensé de l'ambiance rochelaise. Les Minimes conviennent mieux si la plage est votre priorité."
+    },
+    {
+      "q": "Vaut-il mieux un hôtel ou une location ?",
+      "a": "Pour 1 à 3 nuits en couple, l'hôtel au Vieux-Port est imbattable en emplacement. Pour une famille ou un séjour d'une semaine et plus, la location (Gabut, Minimes, Tasdon) revient souvent moins cher et offre plus d'espace."
+    }
+  ],
+  "related_slugs": ["biarritz", "saint-malo", "annecy"],
+  "affiliate": {
+    "booking_search_url": "https://www.booking.com/searchresults.fr.html?ss=La+Rochelle",
+    "hometogo_search_url": "https://www.hometogo.fr/la-rochelle/"
+  },
+  "updated": "2026-07-04",
+  "author": "La rédaction Cap au Frais",
+  "draft": false
+}

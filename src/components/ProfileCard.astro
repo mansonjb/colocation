@@ -1,0 +1,76 @@
+---
+import AffiliateLink from './AffiliateLink.astro';
+
+/** Carte du wedge : profil de voyageur → quartier recommandé → lien affilié */
+interface Props {
+  profile: string;
+  neighborhood: string;
+  reason: string;
+  affiliateUrl: string;
+  ctaLabel?: string;
+}
+
+const { profile, neighborhood, reason, affiliateUrl, ctaLabel } = Astro.props;
+---
+
+<article class="pcard reveal">
+  <span class="who">{profile}</span>
+  <h3>{neighborhood}</h3>
+  <p class="reco" set:html={reason} />
+  <AffiliateLink href={affiliateUrl} class="aff">
+    {ctaLabel ?? `Voir les logements : ${neighborhood} →`}
+  </AffiliateLink>
+</article>
+
+<style>
+  .pcard {
+    background: var(--foam);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition:
+      transform 0.18s ease,
+      box-shadow 0.18s ease;
+  }
+  .pcard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 34px -20px rgba(11, 60, 73, 0.5);
+  }
+  .who {
+    font-family: 'Spline Sans Mono', monospace;
+    font-size: 0.74rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--seaglass-deep);
+    font-weight: 600;
+  }
+  h3 {
+    font-size: 1.3rem;
+  }
+  .reco {
+    font-size: 0.96rem;
+    color: var(--ink-soft);
+  }
+  .reco :global(b) {
+    color: var(--ink);
+  }
+  .pcard :global(.aff) {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    align-self: flex-start;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: var(--atlantic);
+    border-bottom: 2px solid var(--seaglass);
+    padding-bottom: 2px;
+  }
+  .pcard :global(a.aff:hover) {
+    color: var(--seaglass-deep);
+  }
+</style>

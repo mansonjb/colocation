@@ -1,0 +1,123 @@
+---
+/**
+ * Le composant signature du site : 2 jauges comparatives (ville vs référence chaude).
+ * Accessible : valeurs en texte, aria-label, animation neutralisée si prefers-reduced-motion.
+ */
+interface Props {
+  cityName: string;
+  cityTemp: number;
+  referenceCity: string;
+  referenceTemp: number;
+  note?: string;
+}
+
+const { cityName, cityTemp, referenceCity, referenceTemp, note } = Astro.props;
+
+// Échelle commune : la référence chaude plafonne vers ~88 % de la jauge.
+const scale = referenceTemp + 4;
+const coolWidth = Math.round((cityTemp / scale) * 100);
+const hotWidth = Math.round((referenceTemp / scale) * 100);
+---
+
+<div
+  class="thermo"
+  role="img"
+  aria-label={`Comparaison de température maximale moyenne en juillet : ${cityName} ${cityTemp} degrés, ${referenceCity} ${referenceTemp} degrés`}
+>
+  <h3>Le thermomètre coolcation</h3>
+  <p class="sub">Température maximale moyenne en juillet</p>
+  <div class="gauge">
+    <div class="gauge-row">
+      <div class="g-top">
+        <span class="g-name">{cityName}</span><span class="g-val">~{cityTemp} °C</span>
+      </div>
+      <div class="track"><div class="fill cool" style={`width:${coolWidth}%`}></div></div>
+    </div>
+    <div class="gauge-row">
+      <div class="g-top">
+        <span class="g-name">{referenceCity}</span><span class="g-val">~{referenceTemp} °C</span>
+      </div>
+      <div class="track"><div class="fill hot" style={`width:${hotWidth}%`}></div></div>
+    </div>
+  </div>
+  {note && <p class="foot">{note}</p>}
+</div>
+
+<style>
+  .thermo {
+    background: var(--foam);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: 0 18px 40px -22px rgba(11, 60, 73, 0.5);
+  }
+  .thermo h3 {
+    font-size: 1.02rem;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .sub {
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+  }
+  .gauge {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .g-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 6px;
+  }
+  .g-name {
+    font-weight: 600;
+    font-size: 0.92rem;
+  }
+  .g-val {
+    font-family: 'Spline Sans Mono', monospace;
+    font-weight: 600;
+    font-size: 0.92rem;
+  }
+  .track {
+    height: 12px;
+    border-radius: 999px;
+    background: rgba(11, 60, 73, 0.08);
+    overflow: hidden;
+  }
+  .fill {
+    height: 100%;
+    border-radius: 999px;
+    transform-origin: left;
+    animation: grow 1.1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+  .fill.cool {
+    background: linear-gradient(90deg, var(--seaglass), var(--seaglass-deep));
+  }
+  .fill.hot {
+    background: linear-gradient(90deg, #e6b36a, var(--ochre));
+  }
+  @keyframes grow {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+  .foot {
+    margin-top: 18px;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    border-top: 1px dashed var(--line);
+    padding-top: 12px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .fill {
+      animation: none;
+    }
+  }
+</style>

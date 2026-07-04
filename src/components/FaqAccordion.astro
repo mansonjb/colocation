@@ -1,0 +1,64 @@
+---
+import { faqPage } from '../lib/jsonld';
+
+/** FAQ en <details> natifs + JSON-LD FAQPage injecté automatiquement */
+interface Props {
+  faq: { q: string; a: string }[];
+  firstOpen?: boolean;
+}
+
+const { faq, firstOpen = true } = Astro.props;
+---
+
+{
+  faq.length > 0 && (
+    <div class="faq reveal">
+      {faq.map((item, i) => (
+        <details open={firstOpen && i === 0}>
+          <summary>{item.q}</summary>
+          <p>{item.a}</p>
+        </details>
+      ))}
+      <script type="application/ld+json" set:html={JSON.stringify(faqPage(faq))} />
+    </div>
+  )
+}
+
+<style>
+  .faq {
+    margin-top: 30px;
+    border-top: 1px solid var(--line);
+  }
+  details {
+    border-bottom: 1px solid var(--line);
+    padding: 20px 0;
+  }
+  summary {
+    font-family: 'Fraunces', serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  summary::after {
+    content: '+';
+    font-family: 'Spline Sans Mono', monospace;
+    color: var(--seaglass-deep);
+    font-size: 1.4rem;
+    line-height: 1;
+  }
+  details[open] summary::after {
+    content: '–';
+  }
+  details p {
+    margin-top: 12px;
+    color: var(--ink-soft);
+    max-width: 70ch;
+  }
+</style>
