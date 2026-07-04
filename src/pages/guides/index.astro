@@ -1,0 +1,111 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const guides = (await getCollection('guides', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.updated.getTime() - a.data.updated.getTime(),
+);
+
+const title = 'Guides coolcation : bien choisir où partir et où dormir | Cap au Frais';
+const description =
+  'Nos guides transverses : où partir au frais en été, voyager sans voiture, choisir la bonne épaule de saison. Des angles concrets pour décider où dormir.';
+---
+
+<Base title={title} description={description}>
+  <div class="wrap">
+    <Breadcrumbs
+      crumbs={[
+        { name: 'Accueil', href: '/' },
+        { name: 'Guides', href: '/guides/' },
+      ]}
+    />
+    <header class="ihead">
+      <p class="eyebrow">Guides transverses</p>
+      <h1>Les guides d'angle</h1>
+      <p class="lede">
+        Chaque guide croise plusieurs destinations sous un angle précis, puis renvoie vers la fiche
+        « où dormir » de chaque ville.
+      </p>
+    </header>
+
+    <div class="glist">
+      {
+        guides.map((g) => (
+          <a class="gcard reveal" href={`/guides/${g.data.slug}/`}>
+            <span class="gangle">{g.data.angle}</span>
+            <span class="gtitle">{g.data.title}</span>
+            <span class="gintro">{g.data.intro}</span>
+            <span class="go">Lire le guide →</span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+
+  <style>
+    .ihead {
+      padding: 34px 0 8px;
+      max-width: 62ch;
+    }
+    .ihead h1 {
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      margin: 12px 0 14px;
+    }
+    .glist {
+      display: grid;
+      gap: 18px;
+      margin: 28px 0 30px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 760px) {
+      .glist {
+        grid-template-columns: 1fr;
+      }
+    }
+    .gcard {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: var(--foam);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px;
+      text-decoration: none;
+      transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+    }
+    .gcard:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 34px -20px rgba(11, 60, 73, 0.5);
+    }
+    .gangle {
+      font-family: 'Spline Sans Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--seaglass-deep);
+      font-weight: 600;
+    }
+    .gtitle {
+      font-family: 'Fraunces', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .gintro {
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+    }
+    .go {
+      margin-top: auto;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--atlantic);
+      border-bottom: 2px solid var(--seaglass);
+      align-self: flex-start;
+      padding-bottom: 2px;
+    }
+  </style>
+</Base>

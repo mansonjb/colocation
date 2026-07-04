@@ -1,0 +1,99 @@
+---
+/** Carte destination pour les index et l'accueil. Les fiches draft s'affichent en "bientôt". */
+interface Props {
+  name: string;
+  country: string;
+  tagline?: string;
+  julyMax?: number | null;
+  href?: string;
+  draft?: boolean;
+}
+
+const { name, country, tagline, julyMax, href, draft = false } = Astro.props;
+const Tag = draft ? 'div' : 'a';
+---
+
+<Tag class:list={['dcard', 'reveal', { draft }]} href={draft ? undefined : href} data-country={country}>
+  <span class="dtag">{country}</span>
+  <span class="dname">{name}</span>
+  {tagline && <span class="dtagline">{tagline}</span>}
+  <span class="dfoot">
+    {julyMax != null ? <span class="dtemp">~{julyMax} °C en juillet</span> : <span class="dtemp muted">données climat à venir</span>}
+    {draft ? <span class="soon">bientôt</span> : <span class="go">Lire le guide →</span>}
+  </span>
+</Tag>
+
+<style>
+  .dcard {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: var(--foam);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 22px;
+    text-decoration: none;
+    transition:
+      transform 0.18s ease,
+      box-shadow 0.18s ease;
+  }
+  a.dcard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 34px -20px rgba(11, 60, 73, 0.5);
+  }
+  .dcard.draft {
+    opacity: 0.62;
+  }
+  .dtag {
+    font-family: 'Spline Sans Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--seaglass-deep);
+    font-weight: 600;
+  }
+  .dname {
+    font-family: 'Fraunces', serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .dtagline {
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+  }
+  .dfoot {
+    margin-top: auto;
+    padding-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .dtemp {
+    font-family: 'Spline Sans Mono', monospace;
+    font-size: 0.74rem;
+    color: var(--atlantic);
+    font-weight: 600;
+  }
+  .dtemp.muted {
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+  .go {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--atlantic);
+    border-bottom: 2px solid var(--seaglass);
+    padding-bottom: 1px;
+  }
+  .soon {
+    font-family: 'Spline Sans Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ochre);
+    font-weight: 600;
+  }
+</style>

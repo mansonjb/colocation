@@ -1,0 +1,213 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import DestinationCard from '../components/DestinationCard.astro';
+import CoolcationThermometer from '../components/CoolcationThermometer.astro';
+
+const destinations = await getCollection('destinations');
+const published = destinations.filter((d) => !d.data.draft);
+const upcoming = destinations.filter((d) => d.data.draft).slice(0, 5);
+const featured = published[0];
+
+const title = 'Cap au Frais : où dormir au soleil, sans la fournaise (coolcation)';
+const description =
+  "Le guide des séjours ensoleillés mais tempérés. Pour chaque destination coolcation, on vous dit dans quel quartier dormir selon votre profil : couple, famille, budget, longue durée.";
+---
+
+<Base title={title} description={description}>
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">La thèse du site</p>
+        <h1>Autant de soleil que le Sud. <em>Sans la fournaise.</em></h1>
+        <p class="lede">
+          Les étés méditerranéens dépassent les 35 °C. Nous sélectionnons des destinations qui
+          gardent le soleil et perdent la canicule, puis on vous dit exactement dans quel quartier
+          poser vos valises.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="/destinations/">Choisir ma destination →</a>
+          <a class="btn btn-ghost" href="/thematiques/coolcation/">Comprendre la coolcation</a>
+        </div>
+      </div>
+      {
+        featured && featured.data.coolcation.july_max_avg != null && (
+          <CoolcationThermometer
+            cityName={featured.data.name}
+            cityTemp={featured.data.coolcation.july_max_avg}
+            referenceCity={featured.data.coolcation.reference_city}
+            referenceTemp={featured.data.coolcation.reference_july_max ?? 0}
+            note={`Exemple : ${featured.data.name}, ${featured.data.coolcation.sun_hours_year} h de soleil par an et des étés à ~${featured.data.coolcation.july_max_avg} °C.`}
+          />
+        )
+      }
+    </div>
+  </header>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">L'angle, en 3 points</p>
+        <h2>Comment on choisit (et pourquoi ça vous aide à réserver)</h2>
+      </div>
+      <div class="points">
+        <div class="point reveal">
+          <span class="pnum">01</span>
+          <h3>Le climat d'abord</h3>
+          <p>
+            Heures de soleil, maximales de juillet, brise ou altitude : chaque destination est
+            retenue sur des moyennes réelles, jamais sur une impression.
+          </p>
+        </div>
+        <div class="point reveal">
+          <span class="pnum">02</span>
+          <h3>Le quartier, pas l'hôtel</h3>
+          <p>
+            Un « top 10 des hôtels » ne dit pas où VOUS serez bien. Nos fiches comparent les
+            quartiers et recommandent le bon selon votre profil de voyage.
+          </p>
+        </div>
+        <div class="point reveal">
+          <span class="pnum">03</span>
+          <h3>Le bon timing</h3>
+          <p>
+            Chaque fiche montre les épaules de saison : les mois doux, calmes et moins chers,
+            à privilégier quand vos dates sont flexibles.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec no-pt">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Destinations vedettes</p>
+        <h2>Par où commencer</h2>
+        <p>La fiche La Rochelle est notre modèle du genre. Les suivantes arrivent vite.</p>
+      </div>
+      <div class="grid">
+        {
+          published.map((d) => (
+            <DestinationCard
+              name={d.data.name}
+              country={d.data.country}
+              tagline={d.data.hero_tagline}
+              julyMax={d.data.coolcation.july_max_avg}
+              href={`/destinations/${d.data.slug}/`}
+            />
+          ))
+        }
+        {
+          upcoming.map((d) => (
+            <DestinationCard
+              name={d.data.name}
+              country={d.data.country}
+              tagline={d.data.region}
+              julyMax={d.data.coolcation.july_max_avg}
+              draft
+            />
+          ))
+        }
+      </div>
+      <p class="more reveal">
+        <a class="btn btn-ghost" href="/destinations/">Voir toutes les destinations</a>
+        <a class="btn btn-ghost" href="/guides/ou-partir-au-frais-l-ete/">Lire le guide pilier</a>
+      </p>
+    </div>
+  </section>
+
+  <style>
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(120% 90% at 85% -10%, rgba(95, 180, 162, 0.2), transparent 60%),
+        linear-gradient(180deg, var(--sandstone), var(--foam));
+      padding: 78px 0 64px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+    }
+    @media (max-width: 860px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      margin: 14px 0 18px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--seaglass-deep);
+    }
+    .hero .lede {
+      max-width: 38ch;
+    }
+    .hero-cta {
+      margin-top: 28px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 30px;
+    }
+    @media (max-width: 800px) {
+      .points {
+        grid-template-columns: 1fr;
+      }
+    }
+    .point {
+      border-left: 3px solid var(--seaglass);
+      padding: 4px 0 4px 20px;
+    }
+    .pnum {
+      font-family: 'Spline Sans Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--seaglass-deep);
+    }
+    .point h3 {
+      font-size: 1.25rem;
+      margin: 6px 0 8px;
+    }
+    .point p {
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+    }
+    .no-pt {
+      padding-top: 0;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .more {
+      margin-top: 28px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+  </style>
+</Base>

@@ -1,0 +1,160 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import DestinationCard from '../../../components/DestinationCard.astro';
+import RelatedLinks from '../../../components/RelatedLinks.astro';
+
+const destinations = (await getCollection('destinations')).sort(
+  (a, b) => Number(a.data.draft) - Number(b.data.draft) || a.data.name.localeCompare(b.data.name),
+);
+
+const title = "La coolcation : des vacances au soleil, sans la fournaise | Cap au Frais";
+const description =
+  "La coolcation, c'est choisir une destination ensoleillée mais tempérée : 22 à 25 °C l'été au lieu de 35. Le concept, nos critères, et toutes les destinations éligibles.";
+---
+
+<Base title={title} description={description}>
+  <div class="wrap">
+    <Breadcrumbs
+      crumbs={[
+        { name: 'Accueil', href: '/' },
+        { name: 'Thématiques', href: '/thematiques/coolcation/' },
+        { name: 'Coolcation', href: '/thematiques/coolcation/' },
+      ]}
+    />
+    <header class="ihead">
+      <p class="eyebrow">Le hub de l'angle</p>
+      <h1>C'est quoi, une <em>coolcation</em> ?</h1>
+      <p class="lede">
+        Des vacances choisies pour leur climat tempéré : autant de soleil que le Sud, sans les
+        canicules. Le mot vient de « cool » + « vacation », et la demande explose à mesure que les
+        étés méditerranéens deviennent étouffants.
+      </p>
+    </header>
+
+    <section class="criteria reveal" aria-label="Nos critères">
+      <div class="crit">
+        <span class="cnum">01</span>
+        <h2>Du vrai soleil</h2>
+        <p>
+          Pas de grisaille : nos destinations phares dépassent les 2 000 heures de soleil par an,
+          au niveau de villes réputées « du Sud ».
+        </p>
+      </div>
+      <div class="crit">
+        <span class="cnum">02</span>
+        <h2>Jamais la fournaise</h2>
+        <p>
+          Maximales d'été autour de 22 à 25 °C, grâce à une brise marine, un lac ou l'altitude.
+          On dort la fenêtre ouverte, on visite l'après-midi.
+        </p>
+      </div>
+      <div class="crit">
+        <span class="cnum">03</span>
+        <h2>Le bon quartier</h2>
+        <p>
+          Chaque fiche compare les quartiers et recommande où dormir selon votre profil : couple,
+          famille, budget serré ou longue durée.
+        </p>
+      </div>
+    </section>
+
+    <section class="dests">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Les destinations éligibles</p>
+        <h2>Le silo coolcation</h2>
+        <p>Fiches publiées et fiches en préparation, des côtes atlantiques aux lacs alpins.</p>
+      </div>
+      <div class="grid">
+        {
+          destinations.map((d) => (
+            <DestinationCard
+              name={d.data.name}
+              country={d.data.country}
+              tagline={d.data.hero_tagline || d.data.region}
+              julyMax={d.data.coolcation.july_max_avg}
+              href={`/destinations/${d.data.slug}/`}
+              draft={d.data.draft}
+            />
+          ))
+        }
+      </div>
+    </section>
+
+    <RelatedLinks
+      links={[
+        {
+          label: "Le guide : où partir au frais l'été sans quitter le soleil",
+          href: '/guides/ou-partir-au-frais-l-ete/',
+        },
+        { label: 'Notre méthodo et nos sources climat', href: '/a-propos/' },
+      ]}
+    />
+  </div>
+
+  <style>
+    .ihead {
+      padding: 34px 0 8px;
+      max-width: 64ch;
+    }
+    .ihead h1 {
+      font-size: clamp(2.1rem, 5vw, 3.4rem);
+      margin: 12px 0 14px;
+    }
+    .ihead em {
+      font-style: italic;
+      color: var(--seaglass-deep);
+    }
+    .criteria {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin: 36px 0 14px;
+    }
+    @media (max-width: 800px) {
+      .criteria {
+        grid-template-columns: 1fr;
+      }
+    }
+    .crit {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      background: linear-gradient(180deg, rgba(95, 180, 162, 0.06), transparent);
+    }
+    .cnum {
+      font-family: 'Spline Sans Mono', monospace;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--seaglass-deep);
+    }
+    .crit h2 {
+      font-size: 1.3rem;
+      margin: 8px 0;
+    }
+    .crit p {
+      font-size: 0.94rem;
+      color: var(--ink-soft);
+    }
+    .dests {
+      margin-top: 40px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 24px;
+    }
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</Base>

@@ -1,0 +1,127 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import DestinationCard from '../../components/DestinationCard.astro';
+
+const destinations = (await getCollection('destinations')).sort(
+  (a, b) => Number(a.data.draft) - Number(b.data.draft) || a.data.name.localeCompare(b.data.name),
+);
+const countries = [...new Set(destinations.map((d) => d.data.country))].sort();
+
+const title = 'Toutes les destinations coolcation | Cap au Frais';
+const description =
+  'Notre sélection de destinations ensoleillées mais tempérées : côte atlantique, lacs alpins, îles Britanniques. Pour chaque ville, le bon quartier où dormir selon votre profil.';
+---
+
+<Base title={title} description={description}>
+  <div class="wrap">
+    <Breadcrumbs
+      crumbs={[
+        { name: 'Accueil', href: '/' },
+        { name: 'Destinations', href: '/destinations/' },
+      ]}
+    />
+    <header class="ihead">
+      <p class="eyebrow">Le silo coolcation</p>
+      <h1>Les destinations, du plus doux au plus frais</h1>
+      <p class="lede">
+        Chaque fiche répond à une seule question : dans quel quartier dormir selon votre façon de
+        voyager. Filtrez par pays pour commencer.
+      </p>
+    </header>
+
+    <div class="filters" role="group" aria-label="Filtrer les destinations">
+      <button class="chip active" data-filter="all">Toutes</button>
+      {countries.map((c) => <button class="chip" data-filter={c}>{c}</button>)}
+    </div>
+
+    <div class="grid" id="destinations-grid">
+      {
+        destinations.map((d) => (
+          <DestinationCard
+            name={d.data.name}
+            country={d.data.country}
+            tagline={d.data.hero_tagline || d.data.region}
+            julyMax={d.data.coolcation.july_max_avg}
+            href={`/destinations/${d.data.slug}/`}
+            draft={d.data.draft}
+          />
+        ))
+      }
+    </div>
+  </div>
+
+  <script>
+    // Filtre par pays en JS vanilla, sans rechargement
+    const chips = document.querySelectorAll<HTMLButtonElement>('.chip');
+    const cards = document.querySelectorAll<HTMLElement>('#destinations-grid [data-country]');
+    chips.forEach((chip) => {
+      chip.addEventListener('click', () => {
+        chips.forEach((c) => c.classList.remove('active'));
+        chip.classList.add('active');
+        const f = chip.dataset.filter;
+        cards.forEach((card) => {
+          card.style.display = f === 'all' || card.dataset.country === f ? '' : 'none';
+        });
+      });
+    });
+  </script>
+
+  <style>
+    .ihead {
+      padding: 34px 0 8px;
+      max-width: 62ch;
+    }
+    .ihead h1 {
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      margin: 12px 0 14px;
+    }
+    .filters {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 26px 0 6px;
+    }
+    .chip {
+      font-family: 'Spline Sans Mono', monospace;
+      font-size: 0.76rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: 1.5px solid var(--line);
+      background: var(--foam);
+      color: var(--ink-soft);
+      cursor: pointer;
+      transition:
+        border-color 0.15s,
+        background 0.15s;
+    }
+    .chip:hover {
+      border-color: var(--atlantic);
+    }
+    .chip.active {
+      background: var(--atlantic);
+      border-color: var(--atlantic);
+      color: var(--foam);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin: 28px 0 30px;
+    }
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</Base>

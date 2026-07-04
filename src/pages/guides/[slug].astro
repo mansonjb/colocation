@@ -1,0 +1,200 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import FaqAccordion from '../../components/FaqAccordion.astro';
+import Disclosure from '../../components/Disclosure.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
+import DestinationCard from '../../components/DestinationCard.astro';
+import { articleLd } from '../../lib/jsonld';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('guides', ({ data }) => !data.draft);
+  const destinations = await getCollection('destinations');
+  return guides.map((g) => ({ params: { slug: g.data.slug }, props: { g, destinations } }));
+}
+
+const { g, destinations } = Astro.props;
+const guide = g.data;
+const { Content, headings } = await render(g);
+
+const title = `${guide.title} | Cap au Frais`;
+const description = guide.intro.slice(0, 158);
+
+// Le guide lie vers toutes les destinations qu'il cite (règle de maillage)
+const cited = guide.cited_destinations
+  .map((slug) => destinations.find((d) => d.data.slug === slug))
+  .filter((d) => d != null);
+
+const toc = headings.filter((h) => h.depth === 2);
+
+const jsonLd = [articleLd(guide, new URL(Astro.url.pathname, Astro.site))];
+---
+
+<Base title={title} description={description} jsonLd={jsonLd} ogType="article">
+  <header class="ghero">
+    <div class="wrap">
+      <Breadcrumbs
+        crumbs={[
+          { name: 'Accueil', href: '/' },
+          { name: 'Guides', href: '/guides/' },
+          { name: guide.title, href: `/guides/${guide.slug}/` },
+        ]}
+      />
+    </div>
+    <div class="wrap">
+      <p class="eyebrow">{guide.angle}</p>
+      <h1>{guide.title}</h1>
+      <p class="lede">{guide.intro}</p>
+    </div>
+  </header>
+
+  <div class="wrap gbody">
+    {
+      toc.length > 1 && (
+        <nav class="toc reveal" aria-label="Sommaire">
+          <p class="eyebrow">Sommaire</p>
+          <ol>
+            {toc.map((h) => (
+              <li>
+                <a href={`#${h.slug}`}>{h.text}</a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+      )
+    }
+
+    <article class="prose">
+      <Content />
+    </article>
+
+    {
+      cited.length > 0 && (
+        <section class="cited reveal">
+          <p class="eyebrow">Les destinations de ce guide</p>
+          <div class="cited-grid">
+            {cited.map((d) => (
+              <DestinationCard
+                name={d!.data.name}
+                country={d!.data.country}
+                tagline={d!.data.hero_tagline}
+                julyMax={d!.data.coolcation.july_max_avg}
+                href={`/destinations/${d!.data.slug}/`}
+                draft={d!.data.draft}
+              />
+            ))}
+          </div>
+        </section>
+      )
+    }
+
+    <FaqAccordion faq={guide.faq} />
+    <Disclosure />
+    <RelatedLinks
+      links={[
+        { label: 'Toutes les destinations', href: '/destinations/' },
+        { label: "Qu'est-ce que la coolcation ?", href: '/thematiques/coolcation/' },
+      ]}
+    />
+    <p class="updated">
+      Dernière mise à jour : {guide.updated.toLocaleDateString('fr-FR', { dateStyle: 'long' })} · {guide.author}
+    </p>
+  </div>
+</Base>
+
+<style>
+  .ghero {
+    background:
+      radial-gradient(120% 90% at 85% -10%, rgba(95, 180, 162, 0.2), transparent 60%),
+      linear-gradient(180deg, var(--sandstone), var(--foam));
+    padding: 10px 0 44px;
+  }
+  .ghero .lede,
+  .ghero h1 {
+    margin-top: 0;
+  }
+  .ghero > .wrap:last-child {
+    margin-top: 34px;
+  }
+  .ghero h1 {
+    font-size: clamp(2.1rem, 5vw, 3.2rem);
+    margin: 14px 0 16px;
+    max-width: 22ch;
+  }
+  .ghero .lede {
+    max-width: 58ch;
+  }
+  .gbody {
+    padding: 44px 24px 20px;
+  }
+  .toc {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 36px;
+    background: var(--foam);
+  }
+  .toc ol {
+    margin-top: 10px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .toc a {
+    color: var(--atlantic);
+    text-decoration: none;
+    font-size: 0.94rem;
+  }
+  .toc a:hover {
+    text-decoration: underline;
+  }
+  .prose {
+    max-width: 70ch;
+  }
+  .prose :global(h2) {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin: 38px 0 14px;
+    scroll-margin-top: 80px;
+  }
+  .prose :global(p) {
+    margin: 0 0 16px;
+    color: var(--ink);
+  }
+  .prose :global(strong) {
+    color: var(--atlantic);
+  }
+  .prose :global(ol),
+  .prose :global(ul) {
+    padding-left: 22px;
+    margin-bottom: 16px;
+  }
+  .prose :global(li) {
+    margin-bottom: 6px;
+  }
+  .cited {
+    margin-top: 44px;
+  }
+  .cited-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+  }
+  @media (max-width: 860px) {
+    .cited-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 600px) {
+    .cited-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  .updated {
+    margin-top: 26px;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+</style>

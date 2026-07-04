@@ -1,0 +1,91 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const title = "Mentions d'affiliation | Cap au Frais";
+const description =
+  "Comment Cap au Frais se rémunère : liens d'affiliation hébergement (Booking, HomeToGo), toujours signalés, sans surcoût pour vous et sans influence sur nos recommandations.";
+---
+
+<Base title={title} description={description}>
+  <div class="wrap">
+    <Breadcrumbs
+      crumbs={[
+        { name: 'Accueil', href: '/' },
+        { name: "Mentions d'affiliation", href: '/mentions-affiliation/' },
+      ]}
+    />
+    <article class="legal">
+      <p class="eyebrow">Transparence</p>
+      <h1>Mentions d'affiliation</h1>
+
+      <h2>Le principe</h2>
+      <p>
+        Cap au Frais est financé par l'affiliation : lorsque vous réservez un hébergement via
+        certains liens du site (notamment vers Booking.com ou HomeToGo), nous percevons une
+        commission versée par la plateforme. Cette commission ne change rien au prix que vous
+        payez.
+      </p>
+
+      <h2>Comment les liens sont signalés</h2>
+      <p>
+        Tous les liens monétisés du site portent l'attribut <code>rel="sponsored nofollow"</code>,
+        s'ouvrent dans un nouvel onglet, et chaque page qui en contient affiche un encart
+        « Transparence ». Nous ne pratiquons aucun cloaking : la destination du lien est toujours
+        celle affichée.
+      </p>
+
+      <h2>Ce que ça ne change pas</h2>
+      <p>
+        Les recommandations de quartiers et de périodes sont établies avant toute considération
+        d'affiliation, sur des critères de climat, de géographie et d'expérience de voyage. Aucun
+        partenaire ne paie pour être recommandé, et aucun contenu n'est sponsorisé par un
+        hébergeur.
+      </p>
+
+      <h2>Les programmes utilisés</h2>
+      <ul>
+        <li>Booking.com Partner Programme (hébergement)</li>
+        <li>HomeToGo (locations de vacances)</li>
+        <li>GetYourGuide (activités, en secondaire)</li>
+      </ul>
+      <p>
+        Une question ? Écrivez-nous via la page <a href="/a-propos/">à propos</a>.
+      </p>
+    </article>
+  </div>
+
+  <style>
+    .legal {
+      max-width: 70ch;
+      padding: 34px 0 10px;
+    }
+    .legal h1 {
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      margin: 12px 0 22px;
+    }
+    .legal h2 {
+      font-size: 1.5rem;
+      margin: 30px 0 10px;
+    }
+    .legal p {
+      margin-bottom: 14px;
+    }
+    .legal ul {
+      padding-left: 22px;
+      margin-bottom: 14px;
+    }
+    .legal li {
+      margin-bottom: 6px;
+    }
+    .legal code {
+      background: var(--sandstone);
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-size: 0.88em;
+    }
+    .legal a {
+      color: var(--atlantic);
+    }
+  </style>
+</Base>

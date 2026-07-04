@@ -1,0 +1,88 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+
+const title = 'À propos : qui écrit Cap au Frais, et comment | Cap au Frais';
+const description =
+  "Qui est derrière Cap au Frais, comment nous choisissons les destinations coolcation, et d'où viennent nos chiffres climat. Méthodo et sources, en toute transparence.";
+---
+
+<Base title={title} description={description}>
+  <div class="wrap">
+    <Breadcrumbs
+      crumbs={[
+        { name: 'Accueil', href: '/' },
+        { name: 'À propos', href: '/a-propos/' },
+      ]}
+    />
+    <article class="about">
+      <p class="eyebrow">E-E-A-T</p>
+      <h1>Qui écrit, et comment on travaille</h1>
+
+      <h2>La promesse</h2>
+      <p>
+        Cap au Frais aide à choisir où dormir dans des destinations ensoleillées mais tempérées.
+        Pas d'annuaire d'hôtels : une lecture par quartier et par profil de voyageur, pour que la
+        réservation colle à votre façon de voyager.
+      </p>
+
+      <h2>La méthodo climat</h2>
+      <p>
+        Une destination entre dans le silo coolcation si elle combine un ensoleillement généreux
+        (idéalement plus de 2 000 heures par an) et des maximales estivales autour de 22 à 25 °C,
+        grâce à une brise marine, un lac ou l'altitude. Les chiffres publiés sont des moyennes
+        climatiques de long terme, issues des services météorologiques nationaux (Météo-France,
+        Met Office, ARSO...) et recoupées avant publication.
+      </p>
+      <p>
+        Règle de la maison : quand une donnée n'est pas encore vérifiée, la fiche reste en
+        préparation et le champ reste vide. Nous n'inventons jamais un chiffre climat.
+      </p>
+
+      <h2>La méthodo quartiers</h2>
+      <p>
+        Les recommandations de quartiers croisent l'expérience de terrain, la géographie concrète
+        (distance à pied, transports, plages) et la structure de l'offre d'hébergement. Chaque
+        fiche précise sa date de dernière mise à jour.
+      </p>
+
+      <h2>Comment le site se finance</h2>
+      <p>
+        Par l'affiliation hébergement : certains liens sortants sont des liens partenaires
+        (Booking, HomeToGo notamment). Ils sont toujours signalés, n'influencent pas le choix des
+        quartiers recommandés et ne changent rien au prix que vous payez. Le détail est sur la page
+        <a href="/mentions-affiliation/">mentions d'affiliation</a>.
+      </p>
+    </article>
+
+    <RelatedLinks
+      links={[
+        { label: "Qu'est-ce que la coolcation ?", href: '/thematiques/coolcation/' },
+        { label: 'Toutes les destinations', href: '/destinations/' },
+      ]}
+    />
+  </div>
+
+  <style>
+    .about {
+      max-width: 70ch;
+      padding: 34px 0 10px;
+    }
+    .about h1 {
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      margin: 12px 0 22px;
+    }
+    .about h2 {
+      font-size: 1.5rem;
+      margin: 30px 0 10px;
+    }
+    .about p {
+      margin-bottom: 14px;
+      color: var(--ink);
+    }
+    .about a {
+      color: var(--atlantic);
+    }
+  </style>
+</Base>
