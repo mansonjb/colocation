@@ -2,35 +2,118 @@
   "slug": "annecy",
   "name": "Annecy",
   "country": "France",
-  "region": "Montagne & lac",
+  "region": "Alpes & lac",
   "coordinates": {
-    "lat": null,
-    "lng": null
+    "lat": 45.8992,
+    "lng": 6.1294
   },
-  "hero_tagline": "",
-  "intro": "",
+  "hero_tagline": "le lac turquoise qui rafraîchit l'été alpin",
+  "intro": "Un des lacs les plus purs d'Europe, une vieille ville sillonnée de canaux et la montagne qui tempère les soirées. On vous dit dans quel quartier loger selon que vous venez pour la baignade, le vélo, le calme ou l'animation.",
   "coolcation": {
-    "sun_hours_year": null,
-    "july_max_avg": null,
-    "reference_city": "",
-    "reference_july_max": null,
+    "sun_hours_year": 2000,
+    "july_max_avg": 26,
+    "reference_city": "Côte d'Azur",
+    "reference_july_max": 28,
     "breeze_kmh": null,
-    "proof_points": []
+    "proof_points": [
+      "2 000 h de soleil par an, un climat lumineux au pied des Alpes.",
+      "26 °C de maximale moyenne en juillet, avec des soirées fraîches venues de la montagne.",
+      "22 °C : le lac d'Annecy en été, une baignade qui rafraîchit vraiment."
+    ]
   },
   "season": {
-    "ideal_months": [],
-    "peak_months": []
+    "ideal_months": ["Juin", "Sept"],
+    "peak_months": ["Juil", "Août"]
   },
-  "neighborhoods": [],
-  "profiles": [],
-  "faq": [],
-  "related_slugs": [],
+  "neighborhoods": [
+    {
+      "name": "Vieille Ville",
+      "tag": "Cœur historique",
+      "description": "Les canaux, le Palais de l'Isle et les rues piétonnes. Central, animé et sans voiture, mais c'est le secteur le plus prisé et le plus cher.",
+      "best_for": "Première visite, couples sans voiture",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Vieille+Ville%2C+Annecy"
+    },
+    {
+      "name": "Le Pâquier / bord du lac",
+      "tag": "Bord du lac",
+      "description": "Face aux jardins de l'Europe et à la voie verte. Idéal pour enchaîner baignade, vélo et couchers de soleil sur l'eau.",
+      "best_for": "Baignade, vélo autour du lac",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Le+Paquier%2C+Annecy"
+    },
+    {
+      "name": "Les Marquisats",
+      "tag": "Résidentiel & baignade",
+      "description": "Au sud, le long du lac, plus calme et près des spots de baignade. Un bon compromis entre nature et proximité du centre.",
+      "best_for": "Séjours tranquilles au bord de l'eau",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Les+Marquisats%2C+Annecy"
+    },
+    {
+      "name": "Bonlieu / Centre-gare",
+      "tag": "Central & pratique",
+      "description": "Autour de la gare et du centre commerçant : pratique pour arriver en train et rayonner. Moins pittoresque, souvent plus abordable.",
+      "best_for": "Arrivée en train, petits budgets",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Bonlieu%2C+Annecy"
+    },
+    {
+      "name": "Annecy-le-Vieux",
+      "tag": "Familial & calme",
+      "description": "Quartier résidentiel au nord-est, près de la plage d'Albigny. Plus d'espace et des prix plus doux, en échange d'un peu de distance au centre.",
+      "best_for": "Familles, longs séjours avec voiture",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Annecy-le-Vieux"
+    }
+  ],
+  "profiles": [
+    {
+      "profile": "En couple, sans voiture",
+      "neighborhood": "La Vieille Ville",
+      "reason": "Les canaux, les terrasses et la baignade à cinq minutes à pied. Visez une chambre <b>côté rues piétonnes</b> pour vivre le meilleur d'Annecy sans jamais reprendre la voiture.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Vieille+Ville%2C+Annecy"
+    },
+    {
+      "profile": "En famille",
+      "neighborhood": "Annecy-le-Vieux",
+      "reason": "La plage d'Albigny, de l'espace et des rues calmes au nord du lac. Cherchez un <b>appartement avec parking</b> pour combiner baignade et excursions en montagne.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Annecy-le-Vieux"
+    },
+    {
+      "profile": "Baignade & vélo",
+      "neighborhood": "Le Pâquier / bord du lac",
+      "reason": "La voie verte au pied de l'hôtel et les meilleurs accès à l'eau. Idéal pour <b>enchaîner vélo le matin et lac l'après-midi</b> sans jamais prendre la voiture.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Le+Paquier%2C+Annecy"
+    },
+    {
+      "profile": "Petit budget / séjour long",
+      "neighborhood": "Bonlieu / Centre-gare",
+      "reason": "À deux pas du train et du centre, avec des tarifs plus doux qu'au bord de l'eau. Le bon choix pour <b>allonger le séjour</b> et rayonner facilement vers les montagnes.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Bonlieu%2C+Annecy"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Fait-il trop chaud à Annecy en été ?",
+      "a": "Les après-midis de juillet approchent 26 °C, mais l'altitude rafraîchit nettement les soirées et le lac, autour de 22 °C, offre une baignade qui rafraîchit vraiment. On garde le soleil et les longues journées sans les nuits étouffantes du littoral méditerranéen : c'est tout l'intérêt d'une coolcation de lac et de montagne."
+    },
+    {
+      "q": "Faut-il une voiture pour séjourner à Annecy ?",
+      "a": "Non pour la ville et le lac : la vieille ville se vit à pied et la voie verte fait le tour du lac à vélo. Une voiture devient utile seulement pour rejoindre les cols et les stations alentour (Semnoz, massif des Bauges)."
+    },
+    {
+      "q": "Quel quartier pour une première fois ?",
+      "a": "La Vieille Ville ou le bord du lac (Le Pâquier) : centraux, à pied de tout, avec le meilleur de l'ambiance annécienne. Annecy-le-Vieux convient mieux si la plage et le calme priment."
+    },
+    {
+      "q": "Annecy ou une destination de bord de mer pour un été au frais ?",
+      "a": "Annecy mise sur le lac et l'altitude : baignade en eau douce, soirées fraîches et montagnes à portée. Une ville côtière comme La Rochelle ou Biarritz mise sur l'océan et la brise. Choisissez selon que vous préférez la montagne ou la mer."
+    }
+  ],
+  "related_slugs": ["chambery", "biarritz", "la-rochelle"],
   "affiliate": {
-    "booking_search_url": ""
+    "booking_search_url": "https://www.booking.com/searchresults.fr.html?ss=Annecy",
+    "hometogo_search_url": "https://www.hometogo.fr/annecy/"
   },
-  "updated": "2026-07-04",
+  "updated": "2026-07-05",
   "author": "La rédaction Cap au Frais",
-  "draft": true,
+  "draft": false,
   "hero_image": {
     "src": "/images/destinations/annecy.jpg",
     "card": "/images/destinations/card/annecy.jpg",
