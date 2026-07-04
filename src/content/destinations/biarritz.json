@@ -2,33 +2,128 @@
   "slug": "biarritz",
   "name": "Biarritz",
   "country": "France",
-  "region": "Côte atlantique",
+  "region": "Côte basque",
   "coordinates": {
-    "lat": null,
-    "lng": null
+    "lat": 43.4832,
+    "lng": -1.5586
   },
-  "hero_tagline": "",
-  "intro": "",
+  "hero_tagline": "l'élégance balnéaire rafraîchie par l'Atlantique",
+  "intro": "Le soleil du Sud-Ouest et un océan qui ne laisse jamais l'air devenir lourd. On vous dit dans quel quartier loger selon que vous venez pour la plage, le surf, la table ou le calme en famille.",
   "coolcation": {
-    "sun_hours_year": null,
-    "july_max_avg": null,
-    "reference_city": "",
-    "reference_july_max": null,
+    "sun_hours_year": 1900,
+    "july_max_avg": 25,
+    "reference_city": "Côte d'Azur",
+    "reference_july_max": 28,
     "breeze_kmh": null,
-    "proof_points": []
+    "proof_points": [
+      "1 900 h de soleil par an, la lumière du Sud-Ouest sans la moiteur.",
+      "25 °C de maximale moyenne en juillet : un été franc, jamais lourd.",
+      "22 °C d'océan en plein été, une fraîcheur qui gagne tout le front de mer."
+    ]
   },
   "season": {
-    "ideal_months": [],
-    "peak_months": []
+    "ideal_months": ["Mai", "Juin", "Sept"],
+    "peak_months": ["Juil", "Août"]
   },
-  "neighborhoods": [],
-  "profiles": [],
-  "faq": [],
-  "related_slugs": [],
+  "neighborhoods": [
+    {
+      "name": "Grande Plage",
+      "tag": "Cœur balnéaire",
+      "description": "Le centre historique, le casino et la plage emblématique à vos pieds. Tout se fait à pied, mais c'est le secteur le plus couru et le plus cher.",
+      "best_for": "Première visite, séjours courts sans voiture",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Grande+Plage%2C+Biarritz"
+    },
+    {
+      "name": "Le Port Vieux",
+      "tag": "Crique & charme",
+      "description": "Une petite crique abritée, calme et familiale, à deux pas du centre. Le meilleur compromis entre animation et tranquillité.",
+      "best_for": "Couples, baignade tranquille",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Port+Vieux%2C+Biarritz"
+    },
+    {
+      "name": "Côte des Basques",
+      "tag": "Surf & couchers de soleil",
+      "description": "Le spot de surf mythique et les plus beaux couchers de soleil. Quartier en pente, plus résidentiel, idéal si l'océan est votre priorité.",
+      "best_for": "Surfeurs, séjours actifs",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Cote+des+Basques%2C+Biarritz"
+    },
+    {
+      "name": "Les Halles",
+      "tag": "Vie locale & gastronomie",
+      "description": "Autour du marché couvert : bistrots, produits basques et vie de quartier toute l'année. Central sans être sur le front de mer, donc plus abordable.",
+      "best_for": "Gourmands, ambiance locale",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Les+Halles%2C+Biarritz"
+    },
+    {
+      "name": "Milady / Marbella",
+      "tag": "Résidentiel & familial",
+      "description": "Au sud de la ville, une longue plage surveillée et des rues calmes. Plus de place et de meilleurs prix, en échange d'un peu de distance au centre.",
+      "best_for": "Familles, longs séjours avec voiture",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Milady%2C+Biarritz"
+    }
+  ],
+  "profiles": [
+    {
+      "profile": "En couple, sans voiture",
+      "neighborhood": "Le Port Vieux",
+      "reason": "La crique la plus douce de Biarritz, calme le soir mais à cinq minutes à pied du centre et des restaurants. Visez une chambre <b>côté centre</b> pour tout faire sans jamais reprendre la voiture.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Port+Vieux%2C+Biarritz"
+    },
+    {
+      "profile": "En famille",
+      "neighborhood": "Milady / Marbella",
+      "reason": "Une plage surveillée, de l'espace et des rues tranquilles au sud de la ville. Cherchez un <b>appartement avec parking</b> pour rayonner facilement vers les plages basques.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Milady%2C+Biarritz"
+    },
+    {
+      "profile": "Surf & vie active",
+      "neighborhood": "Côte des Basques",
+      "reason": "Le spot historique au pied de l'immeuble et les meilleurs couchers de soleil de la ville. Prévoyez de <b>marcher un peu en pente</b> pour rejoindre le centre, c'est le prix du meilleur emplacement océan.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Cote+des+Basques%2C+Biarritz"
+    },
+    {
+      "profile": "Petit budget / gourmand",
+      "neighborhood": "Les Halles",
+      "reason": "À deux rues du front de mer, autour du marché : des tarifs plus doux et la meilleure table de quartier. Idéal pour <b>manger local et allonger le séjour</b> sans payer la vue.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Les+Halles%2C+Biarritz"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Fait-il trop chaud à Biarritz en été ?",
+      "a": "Non. La maximale moyenne de juillet tourne autour de 25 °C et l'océan Atlantique, autour de 22 °C en été, tempère l'air sur tout le front de mer. Biarritz garde un été franc et ensoleillé sans les nuits étouffantes du pourtour méditerranéen : c'est une destination coolcation typique."
+    },
+    {
+      "q": "Faut-il une voiture pour séjourner à Biarritz ?",
+      "a": "Non pour la ville : le centre, la Grande Plage, le Port Vieux et les Halles se vivent à pied. Une voiture ou le train devient utile seulement pour explorer la côte basque (Bidart, Saint-Jean-de-Luz) ou l'arrière-pays."
+    },
+    {
+      "q": "Quel quartier pour une première fois ?",
+      "a": "La Grande Plage ou le Port Vieux : centraux, à pied de tout, avec le meilleur de l'ambiance balnéaire. La Côte des Basques convient mieux si le surf et l'océan priment sur la proximité des commerces."
+    },
+    {
+      "q": "Biarritz ou La Rochelle pour un été au frais ?",
+      "a": "Les deux sont des destinations coolcation atlantiques. Biarritz est plus balnéaire et vallonnée, tournée vers l'océan et le surf ; La Rochelle est plus plate, plus facile à vélo et tournée vers son port historique. Choisissez selon l'ambiance recherchée."
+    }
+  ],
+  "related_slugs": ["la-rochelle", "saint-malo", "annecy"],
   "affiliate": {
-    "booking_search_url": ""
+    "booking_search_url": "https://www.booking.com/searchresults.fr.html?ss=Biarritz",
+    "hometogo_search_url": "https://www.hometogo.fr/biarritz/"
   },
-  "updated": "2026-07-04",
+  "updated": "2026-07-05",
   "author": "La rédaction Cap au Frais",
-  "draft": true
+  "draft": false,
+  "hero_image": {
+    "src": "/images/destinations/biarritz.jpg",
+    "card": "/images/destinations/card/biarritz.jpg",
+    "alt": "La Grande Plage de Biarritz bordée par l'océan Atlantique",
+    "width": 1400,
+    "height": 933,
+    "card_width": 760,
+    "card_height": 506,
+    "credit_author": "Christian David",
+    "credit_license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Grande_plage_de_Biarritz_en_2025.jpg"
+  }
 }
