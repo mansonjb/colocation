@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Où dormir à La Rochelle : la coolcation idéale (soleil, sans la fournaise)</title>
+<meta name="description" content="Le bon quartier où loger à La Rochelle selon votre profil. Autant de soleil que le Sud, sans les canicules méditerranéennes : notre guide coolcation des hébergements.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --atlantic:#0B3C49;   /* deep teal-navy */
+    --seaglass:#5FB4A2;   /* cool mint accent */
+    --seaglass-deep:#3E8C7C;
+    --sandstone:#F2EBDD;  /* warm pale stone */
+    --foam:#FBFAF6;
+    --ochre:#D98A3D;      /* sun / hot-reference accent only */
+    --ink:#16282E;
+    --ink-soft:#4B5E63;
+    --line:rgba(11,60,73,.14);
+    --radius:14px;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Hanken Grotesk",system-ui,sans-serif;
+    background:var(--foam);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  a{color:inherit}
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;line-height:1.08;letter-spacing:-.01em;font-weight:500}
+
+  /* ---- eyebrow / labels ---- */
+  .eyebrow{
+    font-family:"Spline Sans Mono",monospace;
+    font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--seaglass-deep);font-weight:600;
+  }
+
+  /* ---- top bar ---- */
+  .topbar{
+    position:sticky;top:0;z-index:50;
+    background:rgba(251,250,246,.86);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{font-family:"Fraunces",serif;font-weight:600;font-size:1.15rem;letter-spacing:-.02em}
+  .brand span{color:var(--seaglass-deep)}
+  .topbar nav{display:flex;gap:22px;font-size:.9rem;font-weight:500}
+  .topbar nav a{text-decoration:none;color:var(--ink-soft)}
+  .topbar nav a:hover{color:var(--atlantic)}
+  @media(max-width:680px){.topbar nav{display:none}}
+
+  /* ---- hero ---- */
+  .hero{
+    position:relative;overflow:hidden;
+    background:
+      radial-gradient(120% 90% at 85% -10%, rgba(95,180,162,.20), transparent 60%),
+      linear-gradient(180deg,var(--sandstone),var(--foam));
+    padding:78px 0 64px;
+  }
+  .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+  @media(max-width:860px){.hero .wrap{grid-template-columns:1fr;gap:36px}}
+  .hero h1{font-size:clamp(2.5rem,6vw,4rem);margin:14px 0 18px}
+  .hero h1 em{font-style:italic;color:var(--seaglass-deep)}
+  .lede{font-size:1.18rem;color:var(--ink-soft);max-width:32ch}
+  .hero-cta{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:13px 22px;border-radius:999px;font-weight:600;font-size:.96rem;
+    text-decoration:none;transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-primary{background:var(--atlantic);color:var(--foam);box-shadow:0 8px 22px rgba(11,60,73,.22)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(11,60,73,.28)}
+  .btn-ghost{border:1.5px solid var(--line);color:var(--atlantic);background:transparent}
+  .btn-ghost:hover{border-color:var(--atlantic)}
+
+  /* ---- signature: thermomètre coolcation ---- */
+  .thermo{
+    background:var(--foam);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;box-shadow:0 18px 40px -22px rgba(11,60,73,.5);
+  }
+  .thermo h3{font-size:1.02rem;font-family:"Hanken Grotesk",sans-serif;font-weight:700;margin-bottom:4px}
+  .thermo .sub{font-size:.82rem;color:var(--ink-soft);margin-bottom:18px}
+  .gauge{display:flex;flex-direction:column;gap:16px}
+  .gauge-row .g-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+  .gauge-row .g-name{font-weight:600;font-size:.92rem}
+  .gauge-row .g-val{font-family:"Spline Sans Mono",monospace;font-weight:600;font-size:.92rem}
+  .track{height:12px;border-radius:999px;background:rgba(11,60,73,.08);overflow:hidden}
+  .fill{height:100%;border-radius:999px;transform-origin:left;animation:grow 1.1s cubic-bezier(.2,.8,.2,1) both}
+  .fill.cool{background:linear-gradient(90deg,var(--seaglass),var(--seaglass-deep));width:68%}
+  .fill.hot{background:linear-gradient(90deg,#E6B36A,var(--ochre));width:88%}
+  @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  .thermo .foot{margin-top:18px;font-size:.78rem;color:var(--ink-soft);border-top:1px dashed var(--line);padding-top:12px}
+
+  /* ---- climate proof strip ---- */
+  .proof{padding:54px 0;border-bottom:1px solid var(--line)}
+  .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:26px}
+  @media(max-width:760px){.proof-grid{grid-template-columns:1fr;gap:18px}}
+  .stat{padding:22px;border-left:3px solid var(--seaglass);background:linear-gradient(180deg,rgba(95,180,162,.06),transparent)}
+  .stat .num{font-family:"Fraunces",serif;font-size:2.1rem;font-weight:600;color:var(--atlantic)}
+  .stat .lab{font-size:.94rem;color:var(--ink-soft);margin-top:2px}
+
+  /* ---- section heading ---- */
+  .sec{padding:64px 0}
+  .sec-head{max-width:60ch}
+  .sec-head h2{font-size:clamp(1.8rem,3.5vw,2.5rem);margin:10px 0 12px}
+  .sec-head p{color:var(--ink-soft);font-size:1.05rem}
+
+  /* ---- profile wedge cards ---- */
+  .profiles{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:34px}
+  @media(max-width:760px){.profiles{grid-template-columns:1fr}}
+  .pcard{
+    background:var(--foam);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;display:flex;flex-direction:column;gap:12px;
+    transition:transform .18s ease,box-shadow .18s ease;
+  }
+  .pcard:hover{transform:translateY(-3px);box-shadow:0 16px 34px -20px rgba(11,60,73,.5)}
+  .pcard .who{font-family:"Spline Sans Mono",monospace;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--seaglass-deep);font-weight:600}
+  .pcard h3{font-size:1.3rem}
+  .pcard .reco{font-size:.96rem;color:var(--ink-soft)}
+  .pcard .reco b{color:var(--ink)}
+  .pcard .aff{
+    margin-top:auto;display:inline-flex;align-items:center;gap:7px;align-self:flex-start;
+    font-weight:600;font-size:.9rem;text-decoration:none;color:var(--atlantic);
+    border-bottom:2px solid var(--seaglass);padding-bottom:2px;
+  }
+  .pcard .aff:hover{color:var(--seaglass-deep)}
+
+  /* ---- neighbourhood table-ish ---- */
+  .hoods{margin-top:30px;display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  .hood{display:grid;grid-template-columns:180px 1fr auto;gap:22px;align-items:center;padding:22px 24px;background:var(--foam)}
+  .hood:not(:last-child){border-bottom:1px solid var(--line)}
+  .hood:nth-child(even){background:rgba(242,235,221,.4)}
+  .hood .hname{font-family:"Fraunces",serif;font-size:1.22rem;font-weight:600}
+  .hood .htag{font-family:"Spline Sans Mono",monospace;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--seaglass-deep);display:block;margin-bottom:3px}
+  .hood .hdesc{font-size:.94rem;color:var(--ink-soft)}
+  .hood .hcta{white-space:nowrap}
+  .hood .hcta a{font-size:.86rem;font-weight:600;text-decoration:none;color:var(--atlantic);border:1.5px solid var(--line);padding:9px 15px;border-radius:999px;display:inline-block;transition:border-color .15s}
+  .hood .hcta a:hover{border-color:var(--atlantic)}
+  @media(max-width:760px){
+    .hood{grid-template-columns:1fr;gap:10px}
+    .hood .hcta a{display:inline-block}
+  }
+
+  /* ---- coolcation calendar ---- */
+  .cal{background:var(--atlantic);color:var(--foam);border-radius:var(--radius);padding:40px;margin-top:34px}
+  .cal h3{color:var(--foam);font-size:1.5rem;margin-bottom:8px}
+  .cal p{color:rgba(251,250,246,.78);max-width:54ch}
+  .months{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:26px}
+  @media(max-width:680px){.months{grid-template-columns:repeat(3,1fr)}}
+  .mo{text-align:center;padding:12px 6px;border-radius:10px;font-size:.82rem;font-weight:600;background:rgba(251,250,246,.08)}
+  .mo span{display:block;font-family:"Spline Sans Mono",monospace;font-size:.66rem;font-weight:500;color:rgba(251,250,246,.6);margin-top:3px}
+  .mo.sweet{background:var(--seaglass);color:var(--atlantic)}
+  .mo.sweet span{color:rgba(22,40,46,.7)}
+  .mo.peak{background:var(--ochre);color:#3a2412}
+  .mo.peak span{color:rgba(58,36,18,.7)}
+  .cal-legend{display:flex;gap:18px;margin-top:18px;font-size:.8rem;color:rgba(251,250,246,.78);flex-wrap:wrap}
+  .cal-legend i{width:11px;height:11px;border-radius:3px;display:inline-block;margin-right:6px;vertical-align:middle}
+
+  /* ---- FAQ ---- */
+  .faq{margin-top:30px;border-top:1px solid var(--line)}
+  details{border-bottom:1px solid var(--line);padding:20px 0}
+  summary{font-family:"Fraunces",serif;font-size:1.15rem;font-weight:500;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-family:"Spline Sans Mono",monospace;color:var(--seaglass-deep);font-size:1.4rem;line-height:1}
+  details[open] summary::after{content:"–"}
+  details p{margin-top:12px;color:var(--ink-soft);max-width:70ch}
+
+  /* ---- disclosure / footer ---- */
+  .disclosure{background:var(--sandstone);border-radius:var(--radius);padding:18px 22px;margin-top:40px;font-size:.84rem;color:var(--ink-soft);display:flex;gap:12px;align-items:flex-start}
+  .disclosure b{color:var(--ink)}
+  footer{padding:48px 0;border-top:1px solid var(--line);margin-top:20px}
+  .related{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px}
+  .related a{font-size:.9rem;text-decoration:none;color:var(--atlantic);background:rgba(95,180,162,.12);padding:8px 14px;border-radius:999px;font-weight:500}
+  .related a:hover{background:rgba(95,180,162,.24)}
+  .foot-note{font-size:.8rem;color:var(--ink-soft);margin-top:26px}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    .fill{animation:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand">Cap au <span>Frais</span></div>
+    <nav>
+      <a href="#profils">Selon votre profil</a>
+      <a href="#quartiers">Quartiers</a>
+      <a href="#saison">Quand venir</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </div>
+</div>
+
+<!-- HERO : la thèse coolcation -->
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Guide hébergement · Côte atlantique</p>
+      <h1>Où dormir à La Rochelle, <em>au frais</em> sous le même soleil que le Sud.</h1>
+      <p class="lede">Plus de 2 100 heures de soleil par an, mais des étés tempérés par la brise atlantique. On vous dit dans quel quartier poser vos valises selon votre façon de voyager.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#profils">Trouver mon quartier →</a>
+        <a class="btn btn-ghost" href="#saison">La meilleure période</a>
+      </div>
+    </div>
+
+    <!-- SIGNATURE -->
+    <div class="thermo" aria-label="Comparaison de température en juillet">
+      <h3>Le thermomètre coolcation</h3>
+      <p class="sub">Température maximale moyenne en juillet</p>
+      <div class="gauge">
+        <div class="gauge-row">
+          <div class="g-top"><span class="g-name">La Rochelle</span><span class="g-val">~24 °C</span></div>
+          <div class="track"><div class="fill cool"></div></div>
+        </div>
+        <div class="gauge-row">
+          <div class="g-top"><span class="g-name">Côte d'Azur</span><span class="g-val">~28 °C</span></div>
+          <div class="track"><div class="fill hot"></div></div>
+        </div>
+      </div>
+      <p class="foot">Même ensoleillement généreux, 4 à 5 °C de moins en moyenne — et une mer à 18-20 °C qui rafraîchit l'air en bord de port.</p>
+    </div>
+  </div>
+</header>
+
+<!-- PREUVE CLIMAT -->
+<section class="proof">
+  <div class="wrap reveal">
+    <p class="eyebrow">Pourquoi c'est une destination coolcation</p>
+    <div class="proof-grid">
+      <div class="stat">
+        <div class="num">2 110 h</div>
+        <div class="lab">de soleil par an — davantage que Bordeaux ou Biarritz.</div>
+      </div>
+      <div class="stat">
+        <div class="num">24 °C</div>
+        <div class="lab">de maximale moyenne en juillet : chaud, jamais accablant.</div>
+      </div>
+      <div class="stat">
+        <div class="num">15 km/h</div>
+        <div class="lab">de brise marine moyenne, qui tempère les après-midis d'été.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LE WEDGE : où loger selon le profil -->
+<section class="sec" id="profils">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">L'essentiel</p>
+      <h2>Quel quartier selon votre façon de voyager ?</h2>
+      <p>Pas de « top 10 des hôtels ». La vraie question, c'est <i>où</i> loger pour que le séjour colle à vos envies. Voici notre lecture par profil.</p>
+    </div>
+
+    <div class="profiles">
+      <article class="pcard reveal">
+        <span class="who">En couple, sans voiture</span>
+        <h3>Le Vieux-Port</h3>
+        <p class="reco">Tout se fait à pied : terrasses, tours médiévales, marché. Réservez côté <b>quartier Saint-Jean-du-Pérot</b> pour les ruelles calmes à deux pas de l'animation.</p>
+        <a class="aff" href="#" rel="sponsored nofollow">Voir les logements au Vieux-Port →</a>
+      </article>
+
+      <article class="pcard reveal">
+        <span class="who">En famille</span>
+        <h3>Les Minimes</h3>
+        <p class="reco">La plage la plus accessible, le plus grand port de plaisance d'Europe et le bus de mer pour rejoindre le centre. Cherchez un <b>appartement avec parking</b>.</p>
+        <a class="aff" href="#" rel="sponsored nofollow">Voir les locations aux Minimes →</a>
+      </article>
+
+      <article class="pcard reveal">
+        <span class="who">Petit budget</span>
+        <h3>Tasdon / Beauregard</h3>
+        <p class="reco">À 15 min à vélo du centre, des prix nettement plus doux. Idéal si vous voulez <b>allonger le séjour sans exploser le budget</b> hébergement.</p>
+        <a class="aff" href="#" rel="sponsored nofollow">Voir les bons plans à Tasdon →</a>
+      </article>
+
+      <article class="pcard reveal">
+        <span class="who">Séjour longue durée / télétravail</span>
+        <h3>Le Gabut</h3>
+        <p class="reco">Anciens entrepôts colorés entre port et centre. Des studios et lofts à la semaine, parfaits pour un <b>slow travel</b> les pieds dans la ville.</p>
+        <a class="aff" href="#" rel="sponsored nofollow">Voir les locations au mois →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- QUARTIERS détaillés -->
+<section class="sec" id="quartiers" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">En détail</p>
+      <h2>Les 5 quartiers, comparés</h2>
+      <p>Ambiance, à qui ça convient, et ce qui est accessible à pied.</p>
+    </div>
+
+    <div class="hoods reveal">
+      <div class="hood">
+        <div><span class="htag">Cœur historique</span><span class="hname">Vieux-Port</span></div>
+        <div class="hdesc">Le carte postale rochelaise. Animé, central, idéal sans voiture. Un peu plus cher et vivant le soir.</div>
+        <div class="hcta"><a href="#" rel="sponsored nofollow">Disponibilités</a></div>
+      </div>
+      <div class="hood">
+        <div><span class="htag">Port & docks</span><span class="hname">Le Gabut</span></div>
+        <div class="hdesc">Entrepôts en bois colorés, terrasses, ambiance décontractée. Parfait pour les séjours longue durée.</div>
+        <div class="hcta"><a href="#" rel="sponsored nofollow">Disponibilités</a></div>
+      </div>
+      <div class="hood">
+        <div><span class="htag">Plage & nautisme</span><span class="hname">Les Minimes</span></div>
+        <div class="hdesc">Plage, marina, université. Familial et un peu plus aéré ; le bus de mer compense la distance au centre.</div>
+        <div class="hcta"><a href="#" rel="sponsored nofollow">Disponibilités</a></div>
+      </div>
+      <div class="hood">
+        <div><span class="htag">Résidentiel</span><span class="hname">Saint-Nicolas</span></div>
+        <div class="hdesc">Le marché, les bistrots de quartier, l'esprit local à deux pas du port. Bon équilibre prix / emplacement.</div>
+        <div class="hcta"><a href="#" rel="sponsored nofollow">Disponibilités</a></div>
+      </div>
+      <div class="hood">
+        <div><span class="htag">Abordable</span><span class="hname">Tasdon</span></div>
+        <div class="hdesc">Plus loin du centre mais bien relié à vélo. Le bon choix budget, surtout en haute saison.</div>
+        <div class="hcta"><a href="#" rel="sponsored nofollow">Disponibilités</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALENDRIER COOLCATION -->
+<section class="sec" id="saison" style="padding-top:0">
+  <div class="wrap">
+    <div class="cal reveal">
+      <p class="eyebrow" style="color:var(--seaglass)">Le bon timing</p>
+      <h3>Visez les épaules de saison</h3>
+      <p>Le secret coolcation : mai-juin et septembre offrent un climat doux, des prix plus bas et bien moins de monde que juillet-août — sans rien sacrifier au soleil.</p>
+      <div class="months">
+        <div class="mo">Avr<span>frais</span></div>
+        <div class="mo sweet">Mai<span>idéal</span></div>
+        <div class="mo sweet">Juin<span>idéal</span></div>
+        <div class="mo peak">Juil<span>affluence</span></div>
+        <div class="mo peak">Août<span>affluence</span></div>
+        <div class="mo sweet">Sept<span>idéal</span></div>
+      </div>
+      <div class="cal-legend">
+        <span><i style="background:var(--seaglass)"></i>Fenêtre idéale (doux, calme, abordable)</span>
+        <span><i style="background:var(--ochre)"></i>Haute saison (réserver tôt)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Questions fréquentes</p>
+      <h2>Avant de réserver</h2>
+    </div>
+    <div class="faq reveal">
+      <details open>
+        <summary>Fait-il trop chaud à La Rochelle en été ?</summary>
+        <p>Rarement. La maximale moyenne de juillet tourne autour de 24 °C et la brise marine tempère les après-midis. Des pics de chaleur restent possibles, mais bien plus courts et moins fréquents que sur le pourtour méditerranéen — c'est tout l'intérêt d'une destination coolcation.</p>
+      </details>
+      <details>
+        <summary>Faut-il une voiture pour séjourner à La Rochelle ?</summary>
+        <p>Non pour le centre : le Vieux-Port, Le Gabut et Saint-Nicolas se vivent à pied, et le réseau de vélos jaunes couvre toute la ville. Une voiture devient utile seulement pour rayonner vers l'île de Ré ou Oléron.</p>
+      </details>
+      <details>
+        <summary>Quel quartier pour une première fois ?</summary>
+        <p>Le Vieux-Port ou Saint-Nicolas : centraux, à pied de tout, et le meilleur condensé de l'ambiance rochelaise. Les Minimes conviennent mieux si la plage est votre priorité.</p>
+      </details>
+      <details>
+        <summary>Vaut-il mieux un hôtel ou une location ?</summary>
+        <p>Pour 1 à 3 nuits en couple, l'hôtel au Vieux-Port est imbattable en emplacement. Pour une famille ou un séjour d'une semaine et plus, la location (Gabut, Minimes, Tasdon) revient souvent moins cher et offre plus d'espace.</p>
+      </details>
+    </div>
+
+    <div class="disclosure reveal">
+      <span>ℹ️</span>
+      <p><b>Transparence.</b> Certains liens de cette page sont des liens d'affiliation : si vous réservez via l'un d'eux, nous touchons une commission sans surcoût pour vous. Cela n'influence pas nos recommandations de quartiers.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap reveal">
+    <p class="eyebrow">À lire ensuite</p>
+    <div class="related">
+      <a href="#">Où dormir à Biarritz au frais</a>
+      <a href="#">Île de Ré : quel village choisir</a>
+      <a href="#">7 villes côtières fraîches pour fuir la canicule</a>
+      <a href="#">La Rochelle sans voiture : le guide</a>
+    </div>
+    <p class="foot-note">Cap au Frais — le guide des séjours ensoleillés sans la fournaise. Exemple de page de démonstration.</p>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
