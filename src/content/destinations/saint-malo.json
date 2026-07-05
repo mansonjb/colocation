@@ -2,35 +2,118 @@
   "slug": "saint-malo",
   "name": "Saint-Malo",
   "country": "France",
-  "region": "Côte atlantique",
+  "region": "Côte d'Émeraude",
   "coordinates": {
-    "lat": null,
-    "lng": null
+    "lat": 48.6493,
+    "lng": -2.0257
   },
-  "hero_tagline": "",
-  "intro": "",
+  "hero_tagline": "la cité corsaire où l'air reste vif tout l'été",
+  "intro": "Des remparts battus par les plus grandes marées d'Europe, une eau qui garde l'air respirable et un été breton doux et lumineux. On vous dit dans quel quartier loger selon que vous venez pour l'histoire, la plage, le calme ou le budget.",
   "coolcation": {
-    "sun_hours_year": null,
-    "july_max_avg": null,
-    "reference_city": "",
-    "reference_july_max": null,
+    "sun_hours_year": 1850,
+    "july_max_avg": 21,
+    "reference_city": "Côte d'Azur",
+    "reference_july_max": 28,
     "breeze_kmh": null,
-    "proof_points": []
+    "proof_points": [
+      "1 850 h de soleil par an, la lumière de la côte bretonne sans la chaleur lourde.",
+      "21 °C de maximale moyenne en juillet : un été doux, jamais écrasant.",
+      "17 °C de mer en été, l'air reste vif et respirable même en plein soleil."
+    ]
   },
   "season": {
-    "ideal_months": [],
-    "peak_months": []
+    "ideal_months": ["Mai", "Juin", "Sept"],
+    "peak_months": ["Juil", "Août"]
   },
-  "neighborhoods": [],
-  "profiles": [],
-  "faq": [],
-  "related_slugs": [],
+  "neighborhoods": [
+    {
+      "name": "Intra-Muros",
+      "tag": "Cœur historique",
+      "description": "La cité close dans ses remparts : restaurants, ruelles de granit et chemin de ronde. Central et sans voiture, mais c'est le secteur le plus animé et le plus cher.",
+      "best_for": "Première visite, couples sans voiture",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Intra-Muros%2C+Saint-Malo"
+    },
+    {
+      "name": "Le Sillon",
+      "tag": "Front de mer & plage",
+      "description": "La grande promenade et la plage face au large, entre la vieille ville et Paramé. Idéal pour se réveiller les pieds dans le sable à dix minutes des remparts.",
+      "best_for": "Séjours plage, front de mer",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Le+Sillon%2C+Saint-Malo"
+    },
+    {
+      "name": "Saint-Servan",
+      "tag": "Résidentiel & port",
+      "description": "Au sud, autour du port Solidor : plus calme, plus authentique et souvent meilleur marché. Un bon compromis pour rayonner sans la foule de l'intra-muros.",
+      "best_for": "Ambiance locale, bon rapport qualité-prix",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Saint-Servan%2C+Saint-Malo"
+    },
+    {
+      "name": "Paramé",
+      "tag": "Plage & familial",
+      "description": "De longues plages surveillées et des rues résidentielles au nord-est. Plus d'espace et de tranquillité, parfait en famille, avec le bus pour rejoindre le centre.",
+      "best_for": "Familles, longs séjours",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Parame%2C+Saint-Malo"
+    },
+    {
+      "name": "Rothéneuf",
+      "tag": "Nature & abordable",
+      "description": "Un ancien village de pêcheurs au nord-est, criques et rochers sculptés. Le choix nature et budget, à condition d'accepter un peu de distance au centre.",
+      "best_for": "Petits budgets, calme au bord de l'eau",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Rotheneuf%2C+Saint-Malo"
+    }
+  ],
+  "profiles": [
+    {
+      "profile": "En couple, sans voiture",
+      "neighborhood": "Intra-Muros",
+      "reason": "Dormir dans les remparts, tout faire à pied et finir la soirée sur le chemin de ronde. Visez une chambre <b>côté ruelles abritées</b> pour le calme à deux pas de l'animation.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Intra-Muros%2C+Saint-Malo"
+    },
+    {
+      "profile": "En famille",
+      "neighborhood": "Paramé",
+      "reason": "Les grandes plages surveillées et des rues calmes au nord-est. Cherchez un <b>appartement avec parking</b> pour combiner baignade et sorties vers Cancale ou le Cap Fréhel.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Parame%2C+Saint-Malo"
+    },
+    {
+      "profile": "Au calme / séjour long",
+      "neighborhood": "Saint-Servan",
+      "reason": "Le port Solidor, les marchés et l'esprit malouin loin de la foule. Idéal pour <b>poser ses valises une semaine</b> à meilleur prix qu'en intra-muros.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Saint-Servan%2C+Saint-Malo"
+    },
+    {
+      "profile": "Petit budget",
+      "neighborhood": "Rothéneuf",
+      "reason": "Criques tranquilles et tarifs plus doux à l'écart du centre. Le bon plan pour <b>allonger le séjour</b> si vous avez un vélo ou une voiture.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Rotheneuf%2C+Saint-Malo"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Fait-il trop chaud à Saint-Malo en été ?",
+      "a": "Jamais. La maximale moyenne de juillet tourne autour de 21 °C et la Manche, autour de 17 °C, garde l'air vif même en plein soleil. C'est l'une des destinations coolcation les plus fraîches du littoral français : un été doux et lumineux, à l'opposé des canicules méditerranéennes."
+    },
+    {
+      "q": "Faut-il une voiture pour séjourner à Saint-Malo ?",
+      "a": "Non pour la ville : l'intra-muros, Le Sillon et Saint-Servan se vivent à pied, reliés par le bus. Une voiture devient utile seulement pour rayonner vers Cancale, Dinard ou le Cap Fréhel."
+    },
+    {
+      "q": "Quel quartier pour une première fois ?",
+      "a": "L'intra-muros ou Le Sillon : centraux, à pied de tout, avec le meilleur de l'ambiance malouine. Paramé convient mieux si les plages et le calme priment sur la vie de la vieille ville."
+    },
+    {
+      "q": "Saint-Malo ou La Rochelle pour un été au frais ?",
+      "a": "Saint-Malo est nettement plus fraîche, avec des marées spectaculaires et une eau vive de la Manche. La Rochelle est plus ensoleillée et un peu plus chaude, plus facile à vélo. Choisissez selon que vous cherchez la fraîcheur bretonne ou la douceur atlantique."
+    }
+  ],
+  "related_slugs": ["la-rochelle", "biarritz", "annecy"],
   "affiliate": {
-    "booking_search_url": ""
+    "booking_search_url": "https://www.booking.com/searchresults.fr.html?ss=Saint-Malo",
+    "hometogo_search_url": "https://www.hometogo.fr/saint-malo/"
   },
-  "updated": "2026-07-04",
+  "updated": "2026-07-05",
   "author": "La rédaction Cap au Frais",
-  "draft": true,
+  "draft": false,
   "hero_image": {
     "src": "/images/destinations/saint-malo.jpg",
     "card": "/images/destinations/card/saint-malo.jpg",
