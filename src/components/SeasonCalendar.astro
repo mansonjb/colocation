@@ -1,6 +1,6 @@
 ---
 /**
- * Bandeau des épaules de saison : colore les mois selon les données `season`.
+ * Bandeau des ailes de saison : colore les mois selon les données `season`.
  * Vert d'eau = fenêtre idéale, ocre = haute saison, neutre = hors fenêtre.
  */
 interface Props {
@@ -31,7 +31,7 @@ function stateOf(m: string): { cls: string; label: string } {
 
 <div class="cal reveal">
   <p class="eyebrow cal-eyebrow">Le bon timing</p>
-  <h3>{title ?? 'Visez les épaules de saison'}</h3>
+  <h3>{title ?? 'Visez les ailes de saison'}</h3>
   {text && <p>{text}</p>}
   <ul class="months" role="list" aria-label="Calendrier des saisons, mois par mois">
     {
