@@ -2,35 +2,118 @@
   "slug": "chambery",
   "name": "Chambéry",
   "country": "France",
-  "region": "Montagne & lac",
+  "region": "Alpes & Savoie",
   "coordinates": {
-    "lat": null,
-    "lng": null
+    "lat": 45.5646,
+    "lng": 5.9178
   },
-  "hero_tagline": "",
-  "intro": "",
+  "hero_tagline": "la porte des Alpes, entre lac et massifs",
+  "intro": "Une vieille ville aux allées couvertes, deux massifs à portée de vélo et le plus grand lac naturel de France à quinze minutes. On vous dit dans quel quartier loger selon que vous venez pour la ville, la montagne, le calme ou le budget.",
   "coolcation": {
-    "sun_hours_year": null,
-    "july_max_avg": null,
-    "reference_city": "",
-    "reference_july_max": null,
+    "sun_hours_year": 1900,
+    "july_max_avg": 26,
+    "reference_city": "Côte d'Azur",
+    "reference_july_max": 28,
     "breeze_kmh": null,
-    "proof_points": []
+    "proof_points": [
+      "1 900 h de soleil par an, entre lac du Bourget et massifs de Savoie.",
+      "26 °C en juillet, mais des soirées qui fraîchissent vite au pied des montagnes.",
+      "22 °C : le lac du Bourget en été, à 15 min pour une baignade rafraîchissante."
+    ]
   },
   "season": {
-    "ideal_months": [],
-    "peak_months": []
+    "ideal_months": ["Mai", "Juin", "Sept"],
+    "peak_months": ["Juil", "Août"]
   },
-  "neighborhoods": [],
-  "profiles": [],
-  "faq": [],
-  "related_slugs": [],
+  "neighborhoods": [
+    {
+      "name": "Vieille Ville",
+      "tag": "Cœur historique",
+      "description": "Les allées couvertes, la rue Croix-d'Or et le château des ducs de Savoie. Central, piéton et animé, c'est le secteur le plus vivant mais aussi le plus demandé.",
+      "best_for": "Première visite, couples sans voiture",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Vieille+Ville%2C+Chambery"
+    },
+    {
+      "name": "Curial",
+      "tag": "Culture & central",
+      "description": "Autour du Carré Curial et de la médiathèque : quartier culturel à deux pas du centre, avec cafés et vie de quartier. Central sans être dans le flux touristique.",
+      "best_for": "Ambiance locale, séjours culturels",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Curial%2C+Chambery"
+    },
+    {
+      "name": "Faubourg Montmélian",
+      "tag": "Résidentiel & abordable",
+      "description": "Un faubourg vivant au sud du centre, commerçant et bien relié. Des tarifs plus doux qu'en vieille ville, à quelques minutes à pied des allées.",
+      "best_for": "Petits budgets, séjours longs",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Faubourg+Montmelian%2C+Chambery"
+    },
+    {
+      "name": "Chambéry-le-Vieux",
+      "tag": "Calme & nature",
+      "description": "Au nord, résidentiel et paisible, plus proche de la campagne et des accès au lac du Bourget. Idéal si vous cherchez le calme et un point de départ pour la montagne.",
+      "best_for": "Calme, amateurs de montagne",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Chambery-le-Vieux"
+    },
+    {
+      "name": "Centre-gare",
+      "tag": "Central & pratique",
+      "description": "Autour de la gare : pratique pour arriver en train et rayonner vers Annecy, le lac ou les massifs. Moins pittoresque, souvent plus abordable.",
+      "best_for": "Arrivée en train, escapades sans voiture",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Gare%2C+Chambery"
+    }
+  ],
+  "profiles": [
+    {
+      "profile": "En couple, sans voiture",
+      "neighborhood": "La Vieille Ville",
+      "reason": "Les allées couvertes, les terrasses et les musées à pied. Visez une chambre <b>près de la rue Croix-d'Or</b> pour vivre le meilleur de Chambéry sans jamais prendre la voiture.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Vieille+Ville%2C+Chambery"
+    },
+    {
+      "profile": "Amateurs de montagne",
+      "neighborhood": "Chambéry-le-Vieux",
+      "reason": "Un point de départ calme vers les Bauges et la Chartreuse, avec le lac du Bourget tout près. Cherchez un <b>logement avec parking</b> pour partir tôt en randonnée et rentrer au frais le soir.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Chambery-le-Vieux"
+    },
+    {
+      "profile": "Petit budget / séjour long",
+      "neighborhood": "Faubourg Montmélian",
+      "reason": "Des tarifs plus doux à quelques minutes du centre, dans un quartier commerçant et bien desservi. Le bon choix pour <b>allonger le séjour</b> sans payer le prix de la vieille ville.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Faubourg+Montmelian%2C+Chambery"
+    },
+    {
+      "profile": "Arrivée en train",
+      "neighborhood": "Centre-gare",
+      "reason": "À deux pas des quais pour rejoindre Annecy, le lac du Bourget ou les massifs sans voiture. Pratique pour <b>rayonner en TER</b> et poser ses bagages en arrivant.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Gare%2C+Chambery"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Fait-il trop chaud à Chambéry en été ?",
+      "a": "Les après-midis de juillet peuvent approcher 26 °C dans la vallée, mais les soirées fraîchissent vite grâce à l'altitude et à la proximité des massifs. Le lac du Bourget, à quinze minutes, offre une baignade rafraîchissante : Chambéry se vit comme un camp de base au frais plutôt que comme une ville étouffante."
+    },
+    {
+      "q": "Faut-il une voiture pour séjourner à Chambéry ?",
+      "a": "Non pour la ville : la vieille ville se vit à pied et la gare dessert Annecy, le lac et les vallées en TER. Une voiture devient utile pour accéder aux cols et aux sentiers des Bauges et de la Chartreuse."
+    },
+    {
+      "q": "Quel quartier pour une première fois ?",
+      "a": "La Vieille Ville : centrale, piétonne, avec les allées couvertes et le château à deux pas. Curial ou le Faubourg Montmélian conviennent mieux si vous cherchez l'ambiance locale à meilleur prix."
+    },
+    {
+      "q": "Chambéry ou Annecy pour un été au frais ?",
+      "a": "Annecy mise tout sur son lac, mais elle est plus courue et plus chère en été. Chambéry est plus authentique et abordable, et donne accès à deux massifs et au lac du Bourget. Choisissez Chambéry pour un camp de base montagne plus tranquille."
+    }
+  ],
+  "related_slugs": ["annecy", "la-rochelle", "biarritz"],
   "affiliate": {
-    "booking_search_url": ""
+    "booking_search_url": "https://www.booking.com/searchresults.fr.html?ss=Chambery",
+    "hometogo_search_url": "https://www.hometogo.fr/chambery/"
   },
-  "updated": "2026-07-04",
+  "updated": "2026-07-05",
   "author": "La rédaction Cap au Frais",
-  "draft": true,
+  "draft": false,
   "hero_image": {
     "src": "/images/destinations/chambery.jpg",
     "card": "/images/destinations/card/chambery.jpg",
