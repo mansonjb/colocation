@@ -43,9 +43,7 @@ const description =
           <CoolcationThermometer
             cityName={featured.data.name}
             cityTemp={featured.data.coolcation.july_max_avg}
-            referenceCity={featured.data.coolcation.reference_city}
-            referenceTemp={featured.data.coolcation.reference_july_max ?? 0}
-            note={`Exemple : ${featured.data.name}, ${featured.data.coolcation.sun_hours_year} h de soleil par an et des étés à ~${featured.data.coolcation.july_max_avg} °C.`}
+            note={`Exemple : ${featured.data.name}, ${featured.data.coolcation.sun_hours_year} h de soleil par an et un été qui reste dans la zone de confort.`}
           />
         )
       }

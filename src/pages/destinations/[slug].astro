@@ -49,15 +49,11 @@ function splitStat(point: string): { num: string; lab: string } {
   return m ? { num: m[1].trim(), lab: m[2] } : { num: '', lab: point };
 }
 
-// Note du thermomètre : le complément "brise" n'apparaît que si une valeur de brise
-// fiable est renseignée (littoral). Les destinations de lac/montagne restent neutres.
-const tempDiff =
-  c.reference_july_max != null && c.july_max_avg != null
-    ? c.reference_july_max - c.july_max_avg
-    : null;
+// Note du thermomètre (cadrage "zone de confort") : autant de soleil que le Sud, sans les pics
+// de canicule. Le complément "brise" n'apparaît que si une valeur fiable est renseignée (littoral).
 const thermoNote =
-  tempDiff != null
-    ? `Même ensoleillement généreux, ${tempDiff} °C de moins en moyenne qu'en ${c.reference_city}` +
+  c.july_max_avg != null
+    ? 'Autant de soleil que le Sud, sans les pics à 32-35 °C des étés en canicule' +
       (c.breeze_kmh != null ? ', et une brise qui rafraîchit les après-midis.' : '.')
     : '';
 
@@ -86,14 +82,8 @@ const jsonLd = [touristDestination(dest)];
         </div>
       </div>
       {
-        c.july_max_avg != null && c.reference_july_max != null && (
-          <CoolcationThermometer
-            cityName={dest.name}
-            cityTemp={c.july_max_avg}
-            referenceCity={c.reference_city}
-            referenceTemp={c.reference_july_max}
-            note={thermoNote}
-          />
+        c.july_max_avg != null && (
+          <CoolcationThermometer cityName={dest.name} cityTemp={c.july_max_avg} note={thermoNote} />
         )
       }
     </div>
