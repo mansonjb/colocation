@@ -28,7 +28,16 @@ export const AFFILIATE_PARTNERS: Record<string, AffiliatePartner> = {
     param: 'partner_id',
     id: import.meta.env.PUBLIC_GYG_PARTNER_ID,
   },
+  // Stay22 : méta-recherche d'hébergement (Booking/Expedia/Hotels.com derrière un seul lien
+  // affilié). L'aid est déjà présent dans l'URL construite par buildStay22Link, donc pas
+  // d'injection de paramètre ici — on déclare juste les hosts comme monétisés.
+  stay22: {
+    hosts: ['stay22.com', 'www.stay22.com', 'allez.stay22.com'],
+  },
 };
+
+/** ID partenaire Stay22 (public, apparaît dans les URLs). À définir en env avant mise en ligne. */
+export const STAY22_AID = import.meta.env.PUBLIC_STAY22_AID || 'capaufrais';
 
 /** Tous les hosts monétisés, à plat (pour les tests et le wrapper AffiliateLink) */
 export const MONETIZED_HOSTS: string[] = Object.values(AFFILIATE_PARTNERS).flatMap((p) => p.hosts);

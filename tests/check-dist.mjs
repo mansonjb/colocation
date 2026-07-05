@@ -26,6 +26,9 @@ const MONETIZED_HOSTS = [
   'www.getyourguide.fr',
   'getyourguide.com',
   'www.getyourguide.com',
+  'stay22.com',
+  'www.stay22.com',
+  'allez.stay22.com',
 ];
 
 if (!existsSync(DIST)) {

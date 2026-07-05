@@ -1,0 +1,107 @@
+---
+import AffiliateLink from './AffiliateLink.astro';
+import { buildStay22Link } from '../lib/affiliate';
+import { starCount, type Hotel } from '../lib/hotels';
+
+/** Carte d'un hôtel réel (données scrapées), avec lien de réservation affilié Stay22. */
+interface Props {
+  hotel: Hotel;
+  cityName: string;
+}
+
+const { hotel, cityName } = Astro.props;
+const stars = starCount(hotel.stars);
+const href = buildStay22Link({
+  name: hotel.name,
+  lat: hotel.lat,
+  lng: hotel.lng,
+  address: hotel.address,
+});
+// Adresse courte : on retire le code postal / pays pour garder la rue et le quartier
+const shortAddress = hotel.address?.replace(/,?\s*\d{5}.*$/, '').trim();
+---
+
+<article class="hcard">
+  <div class="htop">
+    {stars && <span class="stars" aria-label={`${stars} étoiles`}>{'★'.repeat(stars)}</span>}
+    {
+      hotel.rating != null && (
+        <span class="rating">
+          <b>{hotel.rating.toFixed(1)}</b>
+          {hotel.reviewCount != null && <span class="reviews">· {hotel.reviewCount} avis</span>}
+        </span>
+      )
+    }
+  </div>
+  <h3>{hotel.name}</h3>
+  {shortAddress && <p class="addr">{shortAddress}</p>}
+  <AffiliateLink href={href} class="hcta" ariaLabel={`Voir les disponibilités : ${hotel.name}`}>
+    Voir les disponibilités →
+  </AffiliateLink>
+</article>
+
+<style>
+  .hcard {
+    background: var(--foam);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition:
+      transform 0.18s ease,
+      box-shadow 0.18s ease;
+  }
+  .hcard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 34px -20px rgba(11, 60, 73, 0.5);
+  }
+  .htop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .stars {
+    color: var(--ochre);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+  .rating {
+    font-family: 'Spline Sans Mono', monospace;
+    font-size: 0.74rem;
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+  .rating b {
+    color: var(--seaglass-deep);
+    font-size: 0.86rem;
+  }
+  .reviews {
+    color: var(--ink-soft);
+  }
+  h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.12rem;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  .addr {
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+  }
+  .hcard :global(.hcta) {
+    margin-top: auto;
+    align-self: flex-start;
+    font-weight: 600;
+    font-size: 0.88rem;
+    text-decoration: none;
+    color: var(--atlantic);
+    border-bottom: 2px solid var(--seaglass);
+    padding-bottom: 2px;
+  }
+  .hcard :global(a.hcta:hover) {
+    color: var(--seaglass-deep);
+  }
+</style>

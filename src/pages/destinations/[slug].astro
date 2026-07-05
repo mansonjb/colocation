@@ -11,7 +11,9 @@ import AffiliateLink from '../../components/AffiliateLink.astro';
 import Disclosure from '../../components/Disclosure.astro';
 import RelatedLinks from '../../components/RelatedLinks.astro';
 import DestinationImage from '../../components/DestinationImage.astro';
+import HotelCard from '../../components/HotelCard.astro';
 import { touristDestination } from '../../lib/jsonld';
+import { hotelsFor } from '../../lib/hotels';
 
 export async function getStaticPaths() {
   const destinations = await getCollection('destinations', ({ data }) => !data.draft);
@@ -56,6 +58,8 @@ const thermoNote =
     ? 'Autant de soleil que le Sud, sans les pics à 32-35 °C des étés en canicule' +
       (c.breeze_kmh != null ? ', et une brise qui rafraîchit les après-midis.' : '.')
     : '';
+
+const hotels = hotelsFor(dest.slug);
 
 const jsonLd = [touristDestination(dest)];
 ---
@@ -162,6 +166,36 @@ const jsonLd = [touristDestination(dest)];
               />
             ))}
           </div>
+        </div>
+      </section>
+    )
+  }
+
+  {
+    hotels.length > 0 && (
+      <section class="sec no-pt" id="hotels">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <p class="eyebrow">Où réserver</p>
+            <h2>Des hébergements bien notés à {dest.name}</h2>
+            <p>
+              Une sélection d'hôtels réels de la ville, parmi les mieux notés. Comparez les
+              disponibilités et les prix via notre partenaire, puis affinez avec les quartiers
+              ci-dessus selon votre profil.
+            </p>
+          </div>
+          <div class="hotels reveal">
+            {hotels.map((h) => (
+              <HotelCard hotel={h} cityName={dest.name} />
+            ))}
+          </div>
+          {dest.affiliate.booking_search_url && (
+            <p class="hotels-all reveal">
+              <AffiliateLink href={dest.affiliate.booking_search_url} class="btn btn-ghost">
+                Voir tous les hébergements à {dest.name} →
+              </AffiliateLink>
+            </p>
+          )}
         </div>
       </section>
     )
@@ -299,6 +333,25 @@ const jsonLd = [touristDestination(dest)];
   }
   .no-pt {
     padding-top: 0;
+  }
+  .hotels {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 30px;
+  }
+  @media (max-width: 860px) {
+    .hotels {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 560px) {
+    .hotels {
+      grid-template-columns: 1fr;
+    }
+  }
+  .hotels-all {
+    margin-top: 26px;
   }
   .all-cta {
     margin-top: 34px;

@@ -1,0 +1,312 @@
+{
+  "annecy": [
+    {
+      "name": "Hôtel Impérial Palace Annecy",
+      "slug": "hotel-imperial-palace-annecy",
+      "rating": 4.4,
+      "reviewCount": 5086,
+      "stars": "Hôtel de tourisme 4 étoiles",
+      "address": "1 All. de l'Impérial Entrée centrale, 74000 Annecy, France",
+      "lat": 45.9037282,
+      "lng": 6.1446627
+    },
+    {
+      "name": "Rivage Hôtel & Spa Annecy",
+      "slug": "rivage-hotel-spa-annecy",
+      "rating": 4.5,
+      "reviewCount": 2666,
+      "stars": "Hôtel de tourisme 4 étoiles",
+      "address": "33 Av. du Petit Port, 74940 Annecy, France",
+      "lat": 45.9059788,
+      "lng": 6.151998
+    },
+    {
+      "name": "Hôtel Le Pélican",
+      "slug": "hotel-le-pelican",
+      "rating": 4.6,
+      "reviewCount": 1395,
+      "stars": "Hôtel de tourisme 4 étoiles",
+      "address": "20 Rue des Marquisats, 74000 Annecy, France",
+      "lat": 45.895667,
+      "lng": 6.1323251
+    },
+    {
+      "name": "Moxy Annecy",
+      "slug": "moxy-annecy",
+      "rating": 4.1,
+      "reviewCount": 3123,
+      "stars": "Hôtel de tourisme 3 étoiles",
+      "address": "19 Av. du Rhône, 74000 Annecy, France",
+      "lat": 45.9002994,
+      "lng": 6.1159164
+    },
+    {
+      "name": "ibis Annecy Centre Vieille Ville",
+      "slug": "ibis-annecy-centre-vieille-ville",
+      "rating": 4.3,
+      "reviewCount": 2004,
+      "stars": "Hôtel de tourisme 3 étoiles",
+      "address": "Ilôt De La Manufacture, 12 Rue de la Gare, 74000 Annecy, France",
+      "lat": 45.8983794,
+      "lng": 6.1225931
+    },
+    {
+      "name": "Hôtel Les Trésoms, Lake and Spa Resort",
+      "slug": "hotel-les-tresoms-lake-and-spa-resort",
+      "rating": 4.2,
+      "reviewCount": 2007,
+      "stars": "Hôtel de tourisme 4 étoiles",
+      "address": "15 Bd de la Corniche, 74000 Annecy, France",
+      "lat": 45.8896159,
+      "lng": 6.13697
+    }
+  ],
+  "biarritz": [
+    {
+      "name": "Hôtel du Palais Biarritz - The Unbound Collection by Hyatt",
+      "slug": "hotel-du-palais-biarritz-the-unbound-collection-by-hyatt",
+      "rating": 4.6,
+      "reviewCount": 1986,
+      "stars": "Hôtel de tourisme 5 étoiles",
+      "address": "1 Av. de l'Impératrice, 64200 Biarritz, France",
+      "lat": 43.4867958,
+      "lng": -1.5562046
+    },
+    {
+      "name": "ALFRED HOTELS - Port Vieux",
+      "slug": "alfred-hotels-port-vieux",
+      "rating": 4.7,
+      "reviewCount": 1096,
+      "stars": "Hôtel de tourisme 3 étoiles",
+      "address": "10 Rue du Port-Vieux, 64200 Biarritz, France",
+      "lat": 43.482222,
+      "lng": -1.5662992
+    },
+    {
+      "name": "Hôtel Sofitel Biarritz Le Miramar Thalassa sea & spa",
+      "slug": "hotel-sofitel-biarritz-le-miramar-thalassa-sea-spa",
+      "rating": 4.2,
+      "reviewCount": 1640,
+      "stars": "Hôtel de tourisme 5 étoiles",
+      "address": "13 Rue Louison Bobet, 64200 Biarritz, France",
+      "lat": 43.4878464,
+      "lng": -1.5538793
+    },
+    {
+      "name": "Grand Tonic Hôtel & SPA Nuxe",
+      "slug": "grand-tonic-hotel-spa-nuxe",
+      "rating": 4.2,
+      "reviewCount": 1570,
+      "stars": "Hôtel de tourisme 4 étoiles",
+      "address": "58 Av. Edouard VII, 64200 Biarritz, France",
+      "lat": 43.4846626,
+      "lng": -1.5567718
+    },
+    {
+      "name": "Regina Experimental Biarritz",
+      "slug": "regina-experimental-biarritz",
+      "rating": 4.5,
+      "reviewCount": 892,
+      "stars": "Hôtel de tourisme 5 étoiles",
+      "address": "52 Av. de l'Impératrice, 64200 Biarritz, France",
+      "lat": 43.4913796,
+      "lng": -1.5520148
+    },
+    {
+      "name": "Hôtel Windsor Biarritz",
+      "slug": "hotel-windsor-biarritz",
+      "rating": 4.3,
+      "reviewCount": 952,
+      "stars": "Hôtel de tourisme 4 étoiles",
+      "address": "11 Av. Edouard VII, 64200 Biarritz, France",
+      "lat": 43.4839744,
+      "lng": -1.5584569
+    }
+  ],
+  "chambery": [
+    {
+      "name": "Hôtel des Princes",
+      "slug": "hotel-des-princes",
+      "rating": 4.5,
+      "reviewCount": 1678,
+      "stars": "Hôtel de tourisme 3 étoiles",
+      "address": "4 Rue de Boigne, 73000 Chambéry, France",
+      "lat": 45.566177,
+      "lng": 5.921915
+    },
+    {
+      "name": "Hôtel Kyriad Chambéry",
+      "slug": "hotel-kyriad-chambery",
+      "rating": 4.2,
+      "reviewCount": 1512,
+      "stars": "Hôtel de tourisme 3 étoiles",
+      "address": "371 Rue de la République, 73000 Chambéry, France",
+      "lat": 45.5637647,
+      "lng": 5.92718
+    },
+    {
+      "name": "Château de Candie",
+      "slug": "chateau-de-candie",
+      "rating": 4.3,
+      "reviewCount": 1194,
+      "stars": "Hôtel de tourisme 4 étoiles",
+      "address": "533 Rue du Bois de Candie, 73000 Chambéry, France",
+      "lat": 45.6021583,
+      "lng": 5.8999833
+    },
+    {
+      "name": "B&B HOTEL Chambéry La Cassine",
+      "slug": "b-b-hotel-chambery-la-cassine",
+      "rating": 3.9,
+      "reviewCount": 1606,
+      "stars": "Hôtel de tourisme 2 étoiles",
+      "address": "204 Rue Dr Vernier, 73000 Chambéry, France",
+      "lat": 45.5770347,
+      "lng": 5.9201774
+    },
+    {
+      "name": "Alexander Park Chambery",
+      "slug": "alexander-park-chambery",
+      "rating": 3.9,
+      "reviewCount": 1234,
+      "stars": "Hôtel de tourisme 4 étoiles",
+      "address": "51 Rue Alexander Fleming, 73000 Chambéry, France",
+      "lat": 45.596965,
+      "lng": 5.8946663
+    },
+    {
+      "name": "Hotel Mercure Chambery Centre",
+      "slug": "hotel-mercure-chambery-centre",
+      "rating": 4,
+      "reviewCount": 926,
+      "stars": "Hôtel de tourisme 4 étoiles",
+      "address": "183 Pl. de la Gare, 73000 Chambéry, France",
+      "lat": 45.5708792,
+      "lng": 5.9193405
+    }
+  ],
+  "la-rochelle": [
+    {
+      "name": "Hôtel Saint Nicolas La Rochelle",
+      "slug": "hotel-saint-nicolas-la-rochelle",
+      "rating": 4.6,
+      "reviewCount": 1764,
+      "stars": "Hôtel de tourisme 4 étoiles",
+      "address": "13 Rue Sardinerie, 17000 La Rochelle, France",
+      "lat": 46.1581112,
+      "lng": -1.1489279
+    },
+    {
+      "name": "Hôtel Mercure La Rochelle Vieux-Port",
+      "slug": "hotel-mercure-la-rochelle-vieux-port",
+      "rating": 4.4,
+      "reviewCount": 2124,
+      "stars": "Hôtel de tourisme 4 étoiles",
+      "address": "Quai Louis Prunier, 17000 La Rochelle, France",
+      "lat": 46.1535026,
+      "lng": -1.1493542
+    },
+    {
+      "name": "Novotel La Rochelle Centre",
+      "slug": "novotel-la-rochelle-centre",
+      "rating": 4.4,
+      "reviewCount": 1664,
+      "stars": "Hôtel de tourisme 4 étoiles",
+      "address": "Av. Prte Neuve, 17000 La Rochelle, France",
+      "lat": 46.160837,
+      "lng": -1.158506
+    },
+    {
+      "name": "Hotel Le Champlain",
+      "slug": "hotel-le-champlain",
+      "rating": 4.6,
+      "reviewCount": 873,
+      "stars": "Hôtel de tourisme 4 étoiles",
+      "address": "30 Rue Rambaud, 17000 La Rochelle, France",
+      "lat": 46.1635742,
+      "lng": -1.154299
+    },
+    {
+      "name": "ibis La Rochelle Vieux-Port",
+      "slug": "ibis-la-rochelle-vieux-port",
+      "rating": 4.3,
+      "reviewCount": 1346,
+      "stars": "Hôtel de tourisme 3 étoiles",
+      "address": "Pl. du Commandant de la Motte Rouge, 17000 La Rochelle, France",
+      "lat": 46.1560058,
+      "lng": -1.1482801
+    },
+    {
+      "name": "Maisons du Monde Hôtel & Suites - La Rochelle Vieux-Port",
+      "slug": "maisons-du-monde-hotel-suites-la-rochelle-vieux-port",
+      "rating": 4.3,
+      "reviewCount": 1078,
+      "stars": "Hôtel de tourisme 4 étoiles",
+      "address": "accès PMR, 3 Rue St Jean du Pérot, 4 Pl. de la Chaîne, 17000 La Rochelle, France",
+      "lat": 46.156547,
+      "lng": -1.154639
+    }
+  ],
+  "saint-malo": [
+    {
+      "name": "Hôtel Le Nouveau Monde",
+      "slug": "hotel-le-nouveau-monde",
+      "rating": 4.7,
+      "reviewCount": 2646,
+      "stars": "Hôtel de tourisme 4 étoiles",
+      "address": "64 Chau. du Sillon, 35400 Saint-Malo, France",
+      "lat": 48.6534779,
+      "lng": -2.0107183
+    },
+    {
+      "name": "Le Grand Hôtel des Thermes",
+      "slug": "le-grand-hotel-des-thermes",
+      "rating": 4.6,
+      "reviewCount": 3075,
+      "stars": "Hôtel de tourisme 5 étoiles",
+      "address": "Grande Plage du Sillon, 100 Bd Hébert, 35400 Saint-Malo, France",
+      "lat": 48.6578848,
+      "lng": -1.9995946
+    },
+    {
+      "name": "Hôtel & Spa Oceania Saint-Malo",
+      "slug": "hotel-spa-oceania-saint-malo",
+      "rating": 4.5,
+      "reviewCount": 1750,
+      "stars": "Hôtel de tourisme 4 étoiles",
+      "address": "2 rue joseph loth, Chau. du Sillon, 35400 Saint-Malo, France",
+      "lat": 48.6517639,
+      "lng": -2.0185866
+    },
+    {
+      "name": "Hôtel Kyriad Saint Malo Plage Vue Mer",
+      "slug": "hotel-kyriad-saint-malo-plage-vue-mer",
+      "rating": 4.3,
+      "reviewCount": 1933,
+      "stars": "Hôtel de tourisme 3 étoiles",
+      "address": "49 Chau. du Sillon, 35400 Saint-Malo, France",
+      "lat": 48.6554338,
+      "lng": -2.0055695
+    },
+    {
+      "name": "Hôtel Ibis Saint-Malo Plage",
+      "slug": "hotel-ibis-saint-malo-plage",
+      "rating": 4.4,
+      "reviewCount": 1463,
+      "stars": "Hôtel de tourisme 3 étoiles",
+      "address": "58 Chau. du Sillon, 35400 Saint-Malo, France",
+      "lat": 48.6531313,
+      "lng": -2.0121567
+    },
+    {
+      "name": "Hôtel France et Chateaubriand Saint-Malo",
+      "slug": "hotel-france-et-chateaubriand-saint-malo",
+      "rating": 4,
+      "reviewCount": 2939,
+      "stars": "Hôtel de tourisme 3 étoiles",
+      "address": "12 Pl. Chateaubriand, 35400 Saint-Malo, France",
+      "lat": 48.6513613,
+      "lng": -2.0241474
+    }
+  ]
+}
