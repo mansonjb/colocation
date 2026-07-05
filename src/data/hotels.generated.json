@@ -308,5 +308,315 @@
       "lat": 48.6513613,
       "lng": -2.0241474
     }
+  ],
+  "bled": [
+    {
+      "name": "Rikli Balance Hotel",
+      "slug": "rikli-balance-hotel",
+      "rating": 4.5,
+      "reviewCount": 2586,
+      "stars": "Hôtel 4 étoiles",
+      "address": "Cankarjeva cesta 4, 4260 Bled, Slovénie",
+      "lat": 46.3656826,
+      "lng": 14.1093447
+    },
+    {
+      "name": "Hotel Park",
+      "slug": "hotel-park",
+      "rating": 4.4,
+      "reviewCount": 2903,
+      "stars": "Hôtel 4 étoiles",
+      "address": "Cesta svobode 15, 4260 Bled, Slovénie",
+      "lat": 46.3679043,
+      "lng": 14.1094117
+    },
+    {
+      "name": "Ribno Alpine Hotel",
+      "slug": "ribno-alpine-hotel",
+      "rating": 4.5,
+      "reviewCount": 1337,
+      "stars": "Hôtel 4 étoiles",
+      "address": "Izletniška ul. 44, 4260 Bled, Slovénie",
+      "lat": 46.346027,
+      "lng": 14.121139
+    },
+    {
+      "name": "Hotel Astoria Bled",
+      "slug": "hotel-astoria-bled",
+      "rating": 4.5,
+      "reviewCount": 1311,
+      "stars": "Hôtel 3 étoiles",
+      "address": "Prešernova cesta 44, 4260 Bled, Slovénie",
+      "lat": 46.3720323,
+      "lng": 14.1073523
+    },
+    {
+      "name": "Vila Bled",
+      "slug": "vila-bled",
+      "rating": 4.6,
+      "reviewCount": 1095,
+      "stars": "Hôtel 4 étoiles",
+      "address": "Cesta svobode 18, 4260 Bled, Slovénie",
+      "lat": 46.3593434,
+      "lng": 14.0935915
+    },
+    {
+      "name": "Grand Hotel Toplice",
+      "slug": "grand-hotel-toplice",
+      "rating": 4.4,
+      "reviewCount": 950,
+      "stars": "Hôtel 5 étoiles",
+      "address": "Cesta svobode 12, 4260 Bled, Slovénie",
+      "lat": 46.3656167,
+      "lng": 14.1073222
+    }
+  ],
+  "donegal": [
+    {
+      "name": "Harvey's Point",
+      "slug": "harvey-s-point",
+      "rating": 4.8,
+      "reviewCount": 2896,
+      "stars": "Hôtel 4 étoiles",
+      "address": "Lough Eske Rd, Friary, Donegal, F94 E771, Irlande",
+      "lat": 54.696086,
+      "lng": -8.0532321
+    },
+    {
+      "name": "Lough Eske Castle",
+      "slug": "lough-eske-castle",
+      "rating": 4.7,
+      "reviewCount": 2381,
+      "stars": "Hôtel 5 étoiles",
+      "address": "Lough Eske Castle Hotel, Lough Eske, Co. Donegal, F94 HX59, Irlande",
+      "lat": 54.688067,
+      "lng": -8.0659423
+    },
+    {
+      "name": "Mill Park Hotel",
+      "slug": "mill-park-hotel",
+      "rating": 4.6,
+      "reviewCount": 1453,
+      "stars": "Hôtel 4 étoiles",
+      "address": "The Mullins, Mullans, Co. Donegal, F94 HD99, Irlande",
+      "lat": 54.659034,
+      "lng": -8.118003
+    },
+    {
+      "name": "The Abbey Hotel Donegal",
+      "slug": "the-abbey-hotel-donegal",
+      "rating": 4.2,
+      "reviewCount": 2205,
+      "stars": "Hôtel 3 étoiles",
+      "address": "Diamond, Donegal, F94 AP8W, Irlande",
+      "lat": 54.6537725,
+      "lng": -8.1109437
+    },
+    {
+      "name": "The Central Hotel Donegal",
+      "slug": "the-central-hotel-donegal",
+      "rating": 4.2,
+      "reviewCount": 999,
+      "stars": "Hôtel 3 étoiles",
+      "address": "The Diamond, Co. Donegal, Irlande",
+      "lat": 54.6534613,
+      "lng": -8.1110696
+    },
+    {
+      "name": "Donegal Manor",
+      "slug": "donegal-manor",
+      "rating": 4.8,
+      "reviewCount": 114,
+      "stars": "Hôtel 4 étoiles",
+      "address": "Donegal Manor, Clarcarricknagunn, Donegal Town, Co. Donegal, F94 XV60, Irlande",
+      "lat": 54.6613192,
+      "lng": -8.0795133
+    }
+  ],
+  "highlands-ecossais": [
+    {
+      "name": "Loch Ness Clansman Hotel",
+      "slug": "loch-ness-clansman-hotel",
+      "rating": 4.2,
+      "reviewCount": 1994,
+      "stars": "Hôtel 3 étoiles",
+      "address": "Brackla, Loch Ness-side, Shire, Inverness IV3 8AU, Royaume-Uni",
+      "lat": 57.3647212,
+      "lng": -4.3928299
+    },
+    {
+      "name": "Highland Hotel",
+      "slug": "highland-hotel",
+      "rating": 4.5,
+      "reviewCount": 734,
+      "stars": "Hôtel 3 étoiles",
+      "address": "Union Rd, Fort William PH33 6QY, Royaume-Uni",
+      "lat": 56.8153915,
+      "lng": -5.1121183
+    },
+    {
+      "name": "Inverlochy Castle, an SLH Hotel",
+      "slug": "inverlochy-castle-an-slh-hotel",
+      "rating": 4.6,
+      "reviewCount": 512,
+      "stars": "Hôtel 5 étoiles",
+      "address": "Torlundy, Fort William PH33 6SN, Royaume-Uni",
+      "lat": 56.8443809,
+      "lng": -5.05389
+    },
+    {
+      "name": "Kincraig Castle Hotel",
+      "slug": "kincraig-castle-hotel",
+      "rating": 4.5,
+      "reviewCount": 523,
+      "stars": "Hôtel 4 étoiles",
+      "address": "Near Tomich on A9 By, Invergordon IV18 0LF, Royaume-Uni",
+      "lat": 57.7091812,
+      "lng": -4.1974939
+    },
+    {
+      "name": "Tulloch Castle Hotel",
+      "slug": "tulloch-castle-hotel",
+      "rating": 4.2,
+      "reviewCount": 662,
+      "stars": "Hôtel 4 étoiles",
+      "address": "Tulloch Castle Dr, Dingwall, Ross-Shire IV15 9ND, Royaume-Uni",
+      "lat": 57.6092377,
+      "lng": -4.433294
+    },
+    {
+      "name": "Coylumbridge Resort Hotel",
+      "slug": "coylumbridge-resort-hotel",
+      "rating": 3.4,
+      "reviewCount": 2521,
+      "stars": "Hôtel 4 étoiles",
+      "address": "Coylumbridge, Aviemore PH22 1QN, Royaume-Uni",
+      "lat": 57.174741,
+      "lng": -3.80522
+    }
+  ],
+  "north-wales": [
+    {
+      "name": "Royal Oak Hotel",
+      "slug": "royal-oak-hotel",
+      "rating": 4.4,
+      "reviewCount": 1705,
+      "stars": "Hôtel 3 étoiles",
+      "address": "Royal Oak Hotel, Holyhead Rd, Betws-y-Coed LL24 0AY, Royaume-Uni",
+      "lat": 53.0924168,
+      "lng": -3.8036715
+    },
+    {
+      "name": "Castle Hotel",
+      "slug": "castle-hotel",
+      "rating": 4.4,
+      "reviewCount": 1446,
+      "stars": "Hôtel 4 étoiles",
+      "address": "High St, Conwy LL32 8DB, Royaume-Uni",
+      "lat": 53.281287,
+      "lng": -3.8290702
+    },
+    {
+      "name": "Waterloo Hotel & Lodge",
+      "slug": "waterloo-hotel-lodge",
+      "rating": 4.4,
+      "reviewCount": 887,
+      "stars": "Hôtel 3 étoiles",
+      "address": "Betws-y-Coed LL24 0AR, Royaume-Uni",
+      "lat": 53.0867737,
+      "lng": -3.7979223
+    },
+    {
+      "name": "Château Rhianfa",
+      "slug": "chateau-rhianfa",
+      "rating": 4.4,
+      "reviewCount": 853,
+      "stars": "Hôtel 5 étoiles",
+      "address": "Beaumaris Rd, Menai Bridge LL59 5NS, Royaume-Uni",
+      "lat": 53.2381943,
+      "lng": -4.1439732
+    },
+    {
+      "name": "Tyn-y-Coed",
+      "slug": "tyn-y-coed",
+      "rating": 4.5,
+      "reviewCount": 707,
+      "stars": "Hôtel 4 étoiles",
+      "address": "Capel Curig, Betws-y-Coed LL24 0EE, Royaume-Uni",
+      "lat": 53.0987152,
+      "lng": -3.8944008
+    },
+    {
+      "name": "Tŷ Gwyn Hotel",
+      "slug": "ty-gwyn-hotel",
+      "rating": 4.5,
+      "reviewCount": 511,
+      "stars": "Hôtel 3 étoiles",
+      "address": "Betws-y-Coed LL24 0SG, Royaume-Uni",
+      "lat": 53.0847134,
+      "lng": -3.7942372
+    }
+  ],
+  "tropea": [
+    {
+      "name": "Aldiana Club Rocca Nettuno Calabria",
+      "slug": "aldiana-club-rocca-nettuno-calabria",
+      "rating": 4.5,
+      "reviewCount": 1595,
+      "stars": "Hôtel 4 étoiles",
+      "address": "Piazza S.S Annunziata, 89861 Tropea VV, Italie",
+      "lat": 38.6720145,
+      "lng": 15.8869801
+    },
+    {
+      "name": "Capovaticano Resort Thalasso Spa",
+      "slug": "capovaticano-resort-thalasso-spa",
+      "rating": 4.5,
+      "reviewCount": 1340,
+      "stars": "Hôtel 4 étoiles",
+      "address": "Località Tono, 89866 San Nicolò di, Ricadi VV, Italie",
+      "lat": 38.6289367,
+      "lng": 15.8313188
+    },
+    {
+      "name": "Tropis Hotel",
+      "slug": "tropis-hotel",
+      "rating": 4.3,
+      "reviewCount": 881,
+      "stars": "Hôtel 4 étoiles",
+      "address": "CONTRADA FONTANA NUOVA, SNC, 89861 Tropea VV, Italie",
+      "lat": 38.6730344,
+      "lng": 15.8971354
+    },
+    {
+      "name": "La Dolce Vita in Tropea",
+      "slug": "la-dolce-vita-in-tropea",
+      "rating": 4.9,
+      "reviewCount": 311,
+      "stars": "Hôtel 4 étoiles",
+      "address": "Largo Migliarese, 3, 89861 Tropea VV, Italie",
+      "lat": 38.6794972,
+      "lng": 15.8972768
+    },
+    {
+      "name": "Hotel Colomba D'Oro",
+      "slug": "hotel-colomba-d-oro",
+      "rating": 4.6,
+      "reviewCount": 364,
+      "stars": "Hôtel 4 étoiles",
+      "address": "Via Vittorio Veneto, 59, 89861 Tropea VV, Italie",
+      "lat": 38.6751237,
+      "lng": 15.8960428
+    },
+    {
+      "name": "Villa Paola",
+      "slug": "villa-paola",
+      "rating": 4.8,
+      "reviewCount": 212,
+      "stars": "Hôtel 5 étoiles",
+      "address": "Contrada Paola, 89861 Tropea VV, Italie",
+      "lat": 38.6770085,
+      "lng": 15.9062034
+    }
   ]
 }

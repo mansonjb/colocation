@@ -3,34 +3,112 @@
   "name": "Donegal",
   "country": "Irlande",
   "region": "Côte atlantique irlandaise",
+  "area_label": "secteur",
+  "hotel_radius_km": 75,
   "coordinates": {
-    "lat": null,
-    "lng": null
+    "lat": 54.6547,
+    "lng": -8.1041
   },
-  "hero_tagline": "",
-  "intro": "",
+  "hero_tagline": "le nord-ouest sauvage, vif et sans canicule",
+  "intro": "Des falaises parmi les plus hautes d'Europe, des plages de surf et un été océanique qui ignore la chaleur. On vous dit dans quel secteur poser vos valises selon que vous venez pour le surf, la nature sauvage, les commodités ou la découverte tranquille.",
   "coolcation": {
-    "sun_hours_year": null,
-    "july_max_avg": null,
+    "sun_hours_year": 1400,
+    "july_max_avg": 18,
     "reference_city": "",
     "reference_july_max": null,
     "breeze_kmh": null,
-    "proof_points": []
+    "proof_points": [
+      "18 °C de maximale moyenne en juillet : un été océanique et vif.",
+      "1 400 h de soleil par an, un ciel changeant balayé par l'Atlantique.",
+      "12 °C la nuit en moyenne l'été : on dort au frais, fenêtre ouverte."
+    ]
   },
   "season": {
-    "ideal_months": [],
-    "peak_months": []
+    "ideal_months": ["Mai", "Juin", "Sept"],
+    "peak_months": ["Juil", "Août"]
   },
-  "neighborhoods": [],
-  "profiles": [],
-  "faq": [],
-  "related_slugs": [],
+  "neighborhoods": [
+    {
+      "name": "Letterkenny",
+      "tag": "Ville & transports",
+      "description": "La plus grande ville du comté : commerces, bus et base pratique. Peu spectaculaire, mais idéale pour rayonner et se ravitailler.",
+      "best_for": "Base pratique, commodités",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Letterkenny%2C+Irlande"
+    },
+    {
+      "name": "Bundoran",
+      "tag": "Surf & bord de mer",
+      "description": "La station balnéaire et capitale du surf du nord-ouest. Animée en été, avec plages et vie nocturne, parfaite si l'océan est votre priorité.",
+      "best_for": "Surf, plages, familles",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Bundoran%2C+Irlande"
+    },
+    {
+      "name": "Dungloe / The Rosses",
+      "tag": "Gaeltacht & nature",
+      "description": "La région gaélophone, criques et paysages sauvages face à l'Atlantique. Pour la nature brute et l'authenticité, loin de la foule.",
+      "best_for": "Nature sauvage, authenticité",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Dungloe%2C+Irlande"
+    },
+    {
+      "name": "Donegal (ville)",
+      "tag": "Sud & découverte",
+      "description": "Une petite ville de caractère au sud du comté, base pour les falaises de Slieve League. Bon équilibre entre commodités et accès à la côte.",
+      "best_for": "Découverte tranquille, falaises",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Donegal+ville%2C+Irlande"
+    }
+  ],
+  "profiles": [
+    {
+      "profile": "Base pratique, transports",
+      "neighborhood": "Letterkenny",
+      "reason": "La ville la mieux équipée, reliée en bus et centrale pour rayonner. Visez un <b>hôtel avec parking</b> pour partir chaque jour vers une autre partie de la côte.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Letterkenny%2C+Irlande"
+    },
+    {
+      "profile": "Surf & plages",
+      "neighborhood": "Bundoran",
+      "reason": "Les meilleures vagues et l'ambiance balnéaire du nord-ouest. Cherchez un <b>logement à pied de la plage</b> pour enchaîner les sessions, combinaison de rigueur même l'été.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Bundoran%2C+Irlande"
+    },
+    {
+      "profile": "Nature sauvage",
+      "neighborhood": "Dungloe / The Rosses",
+      "reason": "La côte gaélophone, ses criques et son silence. Parfait pour <b>se déconnecter au bout de l'Europe</b>, à condition d'avoir une voiture et d'aimer le grand air.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Dungloe%2C+Irlande"
+    },
+    {
+      "profile": "Découverte tranquille",
+      "neighborhood": "Donegal (ville)",
+      "reason": "Une base de caractère au sud, à portée des falaises de Slieve League. Idéal pour <b>un premier séjour</b> qui mêle petite ville et grands paysages.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Donegal+ville%2C+Irlande"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Fait-il chaud dans le Donegal en été ?",
+      "a": "Non. La maximale moyenne de juillet tourne autour de 18 °C et les nuits restent fraîches, autour de 12 °C. Le nord-ouest de l'Irlande ignore les vagues de chaleur : on vient pour l'air vif de l'Atlantique et les paysages, pas pour bronzer."
+    },
+    {
+      "q": "Faut-il une voiture dans le Donegal ?",
+      "a": "Oui, très recommandé. Quelques bus relient Letterkenny et les grandes villes, mais les falaises, les plages de surf et la côte gaélophone se découvrent en voiture. C'est un comté fait pour le road trip."
+    },
+    {
+      "q": "Quel secteur pour une première fois ?",
+      "a": "Donegal ville ou Letterkenny pour les commodités, Bundoran si vous visez les plages et le surf. Réservez au moins une nuit près de Slieve League pour ses falaises spectaculaires."
+    },
+    {
+      "q": "Donegal ou les Highlands pour fuir la chaleur ?",
+      "a": "Les deux offrent une fraîcheur garantie et des paysages sauvages. Le Donegal est plus océanique et tourné vers le surf et les plages ; les Highlands sont plus montagneux. Choisissez selon que vous préférez la côte ou les sommets."
+    }
+  ],
+  "related_slugs": ["highlands-ecossais", "north-wales", "saint-malo"],
   "affiliate": {
-    "booking_search_url": ""
+    "booking_search_url": "https://www.booking.com/searchresults.fr.html?ss=Donegal%2C+Irlande",
+    "hometogo_search_url": "https://www.hometogo.fr/donegal/"
   },
-  "updated": "2026-07-04",
+  "updated": "2026-07-06",
   "author": "La rédaction Cap au Frais",
-  "draft": true,
+  "draft": false,
   "hero_image": {
     "src": "/images/destinations/donegal.jpg",
     "card": "/images/destinations/card/donegal.jpg",

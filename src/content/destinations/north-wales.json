@@ -3,34 +3,112 @@
   "name": "North Wales",
   "country": "Pays de Galles",
   "region": "Snowdonia & côte",
+  "area_label": "secteur",
+  "hotel_radius_km": 60,
   "coordinates": {
-    "lat": null,
-    "lng": null
+    "lat": 53.0684,
+    "lng": -3.8053
   },
-  "hero_tagline": "",
-  "intro": "",
+  "hero_tagline": "les monts d'Eryri et la mer, sans la chaleur",
+  "intro": "Le parc de Snowdonia (Eryri), des châteaux et une côte accessible : un été doux entre montagne et mer. On vous dit dans quel secteur poser vos valises selon que vous venez pour la randonnée, la plage en famille, le patrimoine ou les presqu'îles.",
   "coolcation": {
-    "sun_hours_year": null,
-    "july_max_avg": null,
+    "sun_hours_year": 1450,
+    "july_max_avg": 19,
     "reference_city": "",
     "reference_july_max": null,
     "breeze_kmh": null,
-    "proof_points": []
+    "proof_points": [
+      "19 °C de maximale moyenne en juillet : un été doux entre monts et mer.",
+      "1 450 h de soleil par an, entre les sommets d'Eryri et la côte.",
+      "14 °C la nuit en moyenne l'été, pour des nuits fraîches après la rando."
+    ]
   },
   "season": {
-    "ideal_months": [],
-    "peak_months": []
+    "ideal_months": ["Mai", "Juin", "Sept"],
+    "peak_months": ["Juil", "Août"]
   },
-  "neighborhoods": [],
-  "profiles": [],
-  "faq": [],
-  "related_slugs": [],
+  "neighborhoods": [
+    {
+      "name": "Llandudno",
+      "tag": "Station balnéaire",
+      "description": "La grande station victorienne, sa promenade et sa jetée. Familiale et bien reliée en train, idéale pour mêler bord de mer et excursions à Eryri.",
+      "best_for": "Familles, bord de mer, sans voiture",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Llandudno%2C+Pays+de+Galles"
+    },
+    {
+      "name": "Betws-y-Coed",
+      "tag": "Porte d'Eryri",
+      "description": "Le village-porte du parc de Snowdonia, entre forêts et cascades. Le camp de base des randonneurs, au cœur de la montagne galloise.",
+      "best_for": "Randonnée, nature",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Betws-y-Coed%2C+Pays+de+Galles"
+    },
+    {
+      "name": "Conwy",
+      "tag": "Château & estuaire",
+      "description": "Une cité médiévale ceinte de remparts, son château et son estuaire. Patrimoine et charme, à pied de tout et desservie par le train.",
+      "best_for": "Patrimoine, séjours sans voiture",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Conwy%2C+Pays+de+Galles"
+    },
+    {
+      "name": "Abersoch / Llŷn",
+      "tag": "Plages & presqu'île",
+      "description": "La presqu'île de Llŷn et ses plages de sable, plus sauvage et prisée des amateurs de voile. Belle et tranquille, mais la voiture est utile.",
+      "best_for": "Plages, presqu'île, voile",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Abersoch%2C+Pays+de+Galles"
+    }
+  ],
+  "profiles": [
+    {
+      "profile": "Bord de mer, en famille",
+      "neighborhood": "Llandudno",
+      "reason": "La promenade, la plage et le train pour rayonner sans voiture. Visez un <b>hôtel sur le front de mer</b> pour alterner baignade tempérée et journées à Eryri.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Llandudno%2C+Pays+de+Galles"
+    },
+    {
+      "profile": "Randonnée dans Eryri",
+      "neighborhood": "Betws-y-Coed",
+      "reason": "Au cœur du parc, au départ des sentiers vers le Snowdon (Yr Wyddfa). Cherchez un <b>B&B avec parking et séchoir</b> pour marcher par tous les temps.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Betws-y-Coed%2C+Pays+de+Galles"
+    },
+    {
+      "profile": "Patrimoine, sans voiture",
+      "neighborhood": "Conwy",
+      "reason": "Une cité médiévale à pied de tout, reliée en train. Idéale pour <b>un séjour sans voiture</b> mêlant château, remparts et balades le long de l'estuaire.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Conwy%2C+Pays+de+Galles"
+    },
+    {
+      "profile": "Plages & presqu'île",
+      "neighborhood": "Abersoch / Llŷn",
+      "reason": "Les plus belles plages du nord du pays de Galles, au bout de la presqu'île de Llŷn. Prévoyez une <b>voiture</b> et réservez tôt : le coin est petit et couru l'été.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Abersoch%2C+Pays+de+Galles"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Fait-il chaud dans le nord du pays de Galles en été ?",
+      "a": "Non. La maximale moyenne de juillet tourne autour de 19 °C et les nuits restent fraîches, autour de 14 °C. Entre les sommets d'Eryri et la mer, on profite d'un été doux et respirable, à l'abri des canicules du continent."
+    },
+    {
+      "q": "Faut-il une voiture dans le North Wales ?",
+      "a": "Pas forcément : la côte (Llandudno, Conwy) est bien reliée en train, et des bus desservent Eryri en été. Une voiture reste utile pour la presqu'île de Llŷn et les coins les plus reculés du parc."
+    },
+    {
+      "q": "Quel secteur pour une première fois ?",
+      "a": "Llandudno pour combiner bord de mer et excursions, ou Betws-y-Coed si la randonnée prime. Conwy est parfaite pour une escale patrimoine sans voiture."
+    },
+    {
+      "q": "North Wales ou les Highlands pour un été frais ?",
+      "a": "Le pays de Galles est plus doux et plus accessible (train, distances courtes), avec une belle côte. Les Highlands sont plus sauvages, plus frais et plus lointains. Choisissez selon la dose d'aventure recherchée."
+    }
+  ],
+  "related_slugs": ["highlands-ecossais", "donegal", "saint-malo"],
   "affiliate": {
-    "booking_search_url": ""
+    "booking_search_url": "https://www.booking.com/searchresults.fr.html?ss=Snowdonia%2C+Pays+de+Galles",
+    "hometogo_search_url": "https://www.hometogo.fr/pays-de-galles/"
   },
-  "updated": "2026-07-04",
+  "updated": "2026-07-06",
   "author": "La rédaction Cap au Frais",
-  "draft": true,
+  "draft": false,
   "hero_image": {
     "src": "/images/destinations/north-wales.jpg",
     "card": "/images/destinations/card/north-wales.jpg",

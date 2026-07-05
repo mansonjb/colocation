@@ -3,34 +3,111 @@
   "name": "Tropea",
   "country": "Italie",
   "region": "Côte tyrrhénienne",
+  "area_label": "quartier",
   "coordinates": {
-    "lat": null,
-    "lng": null
+    "lat": 38.6773,
+    "lng": 15.8983
   },
-  "hero_tagline": "",
-  "intro": "",
+  "hero_tagline": "la perle de Calabre, rafraîchie par la mer",
+  "intro": "Un bourg perché sur la falaise, des plages de sable clair et une mer turquoise qui tempère les étés du Sud. On vous dit où loger selon que vous venez pour la vieille ville, la plage à pied, les criques ou le budget.",
   "coolcation": {
-    "sun_hours_year": null,
-    "july_max_avg": null,
+    "sun_hours_year": 2500,
+    "july_max_avg": 30,
     "reference_city": "",
     "reference_july_max": null,
     "breeze_kmh": null,
-    "proof_points": []
+    "proof_points": [
+      "2 500 h de soleil par an, l'un des ciels les plus lumineux d'Italie.",
+      "30 °C en juillet, tempérés par la brise et la mer sur ce promontoire.",
+      "26 °C : la mer Tyrrhénienne en été, une eau qui rafraîchit l'air côtier."
+    ]
   },
   "season": {
-    "ideal_months": [],
-    "peak_months": []
+    "ideal_months": ["Mai", "Juin", "Sept"],
+    "peak_months": ["Juil", "Août"]
   },
-  "neighborhoods": [],
-  "profiles": [],
-  "faq": [],
-  "related_slugs": [],
+  "neighborhoods": [
+    {
+      "name": "Centro storico",
+      "tag": "Cœur perché",
+      "description": "La vieille ville sur la falaise : ruelles, places, restaurants et balcons sur la mer. Central et piéton, mais escaliers et affluence en haute saison.",
+      "best_for": "Première visite, couples sans voiture",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Centro+storico%2C+Tropea"
+    },
+    {
+      "name": "Marina / plage",
+      "tag": "Plage & port",
+      "description": "En contrebas, au niveau de la plage et du port. L'accès direct au sable, en échange de la montée vers la vieille ville.",
+      "best_for": "Plage à pied, familles",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Marina%2C+Tropea"
+    },
+    {
+      "name": "Capo Vaticano / Santa Domenica",
+      "tag": "Criques & nature",
+      "description": "Quelques kilomètres au sud, des criques et des resorts au calme, près des plus belles eaux de la côte. Plus de tranquillité, mais la voiture est utile.",
+      "best_for": "Séjours nature, resorts au calme",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Capo+Vaticano%2C+Italie"
+    },
+    {
+      "name": "Parghelia",
+      "tag": "Voisin & abordable",
+      "description": "Le village voisin au nord, plus tranquille et souvent meilleur marché, avec de belles plages. Un bon plan budget à courte distance de Tropea.",
+      "best_for": "Petits budgets, calme",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Parghelia%2C+Italie"
+    }
+  ],
+  "profiles": [
+    {
+      "profile": "En couple, sans voiture",
+      "neighborhood": "Le Centro storico",
+      "reason": "Dormir sur la falaise, dîner face au coucher de soleil et descendre à la plage à pied. Visez une chambre <b>avec balcon côté mer</b> pour la brise et la vue.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Centro+storico%2C+Tropea"
+    },
+    {
+      "profile": "En famille",
+      "neighborhood": "Marina / plage",
+      "reason": "L'accès direct au sable, sans gérer les escaliers de la vieille ville avec des enfants. Cherchez un <b>logement de plain-pied près de la plage</b> pour des journées faciles.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Marina%2C+Tropea"
+    },
+    {
+      "profile": "Criques & tranquillité",
+      "neighborhood": "Capo Vaticano",
+      "reason": "Les plus belles eaux de la côte et des resorts au calme, à quelques minutes en voiture. Idéal pour <b>fuir la foule estivale</b> tout en restant proche de Tropea.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Capo+Vaticano%2C+Italie"
+    },
+    {
+      "profile": "Petit budget",
+      "neighborhood": "Parghelia",
+      "reason": "Le village voisin, plus doux côté prix, avec de belles plages. Le bon choix pour <b>allonger le séjour</b> à courte distance de Tropea.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Parghelia%2C+Italie"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Fait-il trop chaud à Tropea en été ?",
+      "a": "Tropea reste dans le Sud : les après-midis de juillet approchent 30 °C. Mais le promontoire est balayé par la brise et la mer, autour de 26 °C, tempère l'air côtier. On évite les pics à 35 °C de l'intérieur calabrais, surtout en visant mai-juin ou septembre."
+    },
+    {
+      "q": "Faut-il une voiture pour séjourner à Tropea ?",
+      "a": "Non pour la ville : la vieille ville, le port et la plage se font à pied. Une voiture devient utile pour rejoindre les criques de Capo Vaticano ou explorer la côte tyrrhénienne."
+    },
+    {
+      "q": "Quel coin pour une première fois ?",
+      "a": "Le Centro storico : perché, piéton, avec les plus belles vues et la plage en contrebas. La Marina convient mieux si vous voulez le sable au pied de l'hôtel, sans les escaliers."
+    },
+    {
+      "q": "Tropea, est-ce vraiment une destination au frais ?",
+      "a": "C'est la version ventilée du Sud : plus chaude que nos destinations atlantiques ou alpines, mais tempérée par la mer et la brise, loin des fournaises de l'intérieur. Pour un été franchement frais, préférez Saint-Malo ou les Highlands ; pour du soleil méditerranéen supportable, Tropea est un bon compromis."
+    }
+  ],
+  "related_slugs": ["biarritz", "la-rochelle", "bled"],
   "affiliate": {
-    "booking_search_url": ""
+    "booking_search_url": "https://www.booking.com/searchresults.fr.html?ss=Tropea",
+    "hometogo_search_url": "https://www.hometogo.fr/tropea/"
   },
-  "updated": "2026-07-04",
+  "updated": "2026-07-06",
   "author": "La rédaction Cap au Frais",
-  "draft": true,
+  "draft": false,
   "hero_image": {
     "src": "/images/destinations/tropea.jpg",
     "card": "/images/destinations/card/tropea.jpg",

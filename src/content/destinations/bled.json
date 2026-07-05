@@ -3,34 +3,111 @@
   "name": "Bled",
   "country": "Slovénie",
   "region": "Alpes juliennes",
+  "area_label": "quartier",
   "coordinates": {
-    "lat": null,
-    "lng": null
+    "lat": 46.3683,
+    "lng": 14.1146
   },
-  "hero_tagline": "",
-  "intro": "",
+  "hero_tagline": "le lac alpin le plus doux de Slovénie",
+  "intro": "Une eau émeraude, une île coiffée d'une église et les Alpes juliennes en toile de fond. On vous dit où poser vos valises selon que vous venez pour la baignade, la randonnée, le calme en famille ou le budget.",
   "coolcation": {
-    "sun_hours_year": null,
-    "july_max_avg": null,
-    "reference_city": "",
-    "reference_july_max": null,
+    "sun_hours_year": 1950,
+    "july_max_avg": 26,
+    "reference_city": "Côte d'Azur",
+    "reference_july_max": 28,
     "breeze_kmh": null,
-    "proof_points": []
+    "proof_points": [
+      "1 950 h de soleil par an, la lumière alpine sur une eau claire.",
+      "26 °C en juillet, tempérés par l'altitude et des nuits fraîches.",
+      "22 °C : le lac de Bled en été, une baignade douce au pied des Alpes juliennes."
+    ]
   },
   "season": {
-    "ideal_months": [],
-    "peak_months": []
+    "ideal_months": ["Juin", "Sept"],
+    "peak_months": ["Juil", "Août"]
   },
-  "neighborhoods": [],
-  "profiles": [],
-  "faq": [],
-  "related_slugs": [],
+  "neighborhoods": [
+    {
+      "name": "Bord du lac (Centre)",
+      "tag": "Cœur touristique",
+      "description": "La promenade, les hôtels historiques et l'embarcadère pour l'île. Tout est à pied, mais c'est le secteur le plus animé et le plus cher.",
+      "best_for": "Première visite, couples sans voiture",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Bled+lac%2C+Slovenie"
+    },
+    {
+      "name": "Mlino",
+      "tag": "Rive sud tranquille",
+      "description": "Sur la rive sud, calme et familial, avec les barques traditionnelles pour l'île. Un bon compromis entre nature et proximité du centre.",
+      "best_for": "Familles, séjours tranquilles",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Mlino%2C+Bled"
+    },
+    {
+      "name": "Zaka (rive ouest)",
+      "tag": "Nature & baignade",
+      "description": "L'extrémité ouest, au pied de la forêt et près du centre d'aviron. Idéal pour la baignade et les départs de randonnée, à l'écart de la foule.",
+      "best_for": "Randonneurs, baignade au calme",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Zaka%2C+Bled"
+    },
+    {
+      "name": "Côté village / Grad",
+      "tag": "Vues & budget",
+      "description": "Les rues résidentielles sous le château, en léger surplomb du lac. Plus abordable, avec de belles vues, en échange d'un peu de marche jusqu'à l'eau.",
+      "best_for": "Petits budgets, séjours longs",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Grad%2C+Bled"
+    }
+  ],
+  "profiles": [
+    {
+      "profile": "En couple, sans voiture",
+      "neighborhood": "Le bord du lac",
+      "reason": "La promenade, les terrasses et la barque vers l'île à deux pas. Visez un hôtel <b>côté est de la rive</b> pour les meilleurs couchers de soleil sur les Alpes.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Bled+lac%2C+Slovenie"
+    },
+    {
+      "profile": "En famille",
+      "neighborhood": "Mlino",
+      "reason": "Une rive calme, la baignade douce et les barques traditionnelles. Cherchez un <b>appartement avec jardin</b> pour combiner lac et sorties dans les Alpes juliennes.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Mlino%2C+Bled"
+    },
+    {
+      "profile": "Randonnée & nature",
+      "neighborhood": "Zaka (rive ouest)",
+      "reason": "Au pied des sentiers et du centre d'aviron, loin de l'affluence. Parfait pour <b>enchaîner rando le matin et lac l'après-midi</b>, avec les gorges de Vintgar toutes proches.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Zaka%2C+Bled"
+    },
+    {
+      "profile": "Petit budget",
+      "neighborhood": "Côté village / Grad",
+      "reason": "Des chambres plus abordables sous le château, avec la vue en prime. Le bon plan pour <b>allonger le séjour</b> si vous acceptez quelques minutes de marche jusqu'à l'eau.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Grad%2C+Bled"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Fait-il trop chaud à Bled en été ?",
+      "a": "Non. Les après-midis de juillet approchent 26 °C, mais l'altitude rafraîchit nettement les nuits et le lac, autour de 22 °C, offre une baignade douce. Bled garde un été ensoleillé et respirable, loin des canicules méditerranéennes : une coolcation de lac et de montagne."
+    },
+    {
+      "q": "Faut-il une voiture pour séjourner à Bled ?",
+      "a": "Non pour le lac : tout le tour se fait à pied ou à vélo, et des bus relient Ljubljana et l'aéroport. Une voiture devient utile pour les gorges de Vintgar, le lac de Bohinj ou le parc du Triglav."
+    },
+    {
+      "q": "Quel coin pour une première fois ?",
+      "a": "Le bord du lac, côté centre : à pied de l'embarcadère, des terrasses et de la promenade. Mlino ou Zaka conviennent mieux si le calme et la baignade priment sur l'animation."
+    },
+    {
+      "q": "Bled ou Annecy pour un été au frais ?",
+      "a": "Les deux sont des lacs alpins ensoleillés aux nuits fraîches. Annecy est plus grande et plus animée ; Bled est plus petite, plus sauvage et donne accès au parc national du Triglav. Choisissez selon l'ambiance recherchée."
+    }
+  ],
+  "related_slugs": ["annecy", "chambery", "la-rochelle"],
   "affiliate": {
-    "booking_search_url": ""
+    "booking_search_url": "https://www.booking.com/searchresults.fr.html?ss=Bled",
+    "hometogo_search_url": "https://www.hometogo.fr/bled/"
   },
-  "updated": "2026-07-04",
+  "updated": "2026-07-06",
   "author": "La rédaction Cap au Frais",
-  "draft": true,
+  "draft": false,
   "hero_image": {
     "src": "/images/destinations/bled.jpg",
     "card": "/images/destinations/card/bled.jpg",

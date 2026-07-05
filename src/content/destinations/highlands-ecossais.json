@@ -3,34 +3,112 @@
   "name": "Highlands écossais",
   "country": "Écosse",
   "region": "Highlands",
+  "area_label": "secteur",
+  "hotel_radius_km": 120,
   "coordinates": {
-    "lat": null,
-    "lng": null
+    "lat": 56.8198,
+    "lng": -5.1052
   },
-  "hero_tagline": "",
-  "intro": "",
+  "hero_tagline": "le grand air et la vraie fraîcheur des glens",
+  "intro": "Des lochs, des sommets et un été qui ne connaît pas la canicule. Ici on ne vend pas le soleil constant mais le grand air : on vous dit dans quel secteur poser vos valises selon que vous venez pour la montagne, les transports, les paysages ou la famille.",
   "coolcation": {
-    "sun_hours_year": null,
-    "july_max_avg": null,
+    "sun_hours_year": 1150,
+    "july_max_avg": 17,
     "reference_city": "",
     "reference_july_max": null,
     "breeze_kmh": null,
-    "proof_points": []
+    "proof_points": [
+      "17 °C de maximale moyenne en juillet : un été franchement frais.",
+      "20 °C rarement dépassés, même au cœur de l'été.",
+      "1 150 h de soleil par an : un ciel changeant à assumer, contre une vraie fraîcheur."
+    ]
   },
   "season": {
-    "ideal_months": [],
-    "peak_months": []
+    "ideal_months": ["Mai", "Juin", "Sept"],
+    "peak_months": ["Juil", "Août"]
   },
-  "neighborhoods": [],
-  "profiles": [],
-  "faq": [],
-  "related_slugs": [],
+  "neighborhoods": [
+    {
+      "name": "Inverness",
+      "tag": "Capitale & transports",
+      "description": "La ville des Highlands : gare, aéroport et base pour le Loch Ness. Pratique pour arriver sans voiture et rayonner, moins spectaculaire que les glens.",
+      "best_for": "Arrivée en train, séjours sans voiture",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Inverness%2C+Ecosse"
+    },
+    {
+      "name": "Fort William",
+      "tag": "Ben Nevis & Ouest",
+      "description": "La capitale du plein air, au pied du Ben Nevis et de Glen Nevis. Le meilleur camp de base pour la randonnée et la côte ouest.",
+      "best_for": "Randonnée, sommets",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Fort+William%2C+Ecosse"
+    },
+    {
+      "name": "Aviemore",
+      "tag": "Cairngorms",
+      "description": "Station de montagne au cœur du parc des Cairngorms : activités, forêts et lacs. Idéal en famille, avec de la fraîcheur garantie même en été.",
+      "best_for": "Familles, nature",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Aviemore%2C+Ecosse"
+    },
+    {
+      "name": "Île de Skye (Portree)",
+      "tag": "Île & paysages",
+      "description": "Les paysages les plus spectaculaires des Highlands, avec Portree comme base. Superbe mais éloigné et très couru en été : réservez tôt.",
+      "best_for": "Paysages, road trip",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Portree%2C+Skye"
+    }
+  ],
+  "profiles": [
+    {
+      "profile": "Sans voiture, en train",
+      "neighborhood": "Inverness",
+      "reason": "La seule vraie base reliée en train, d'où partent bus et excursions vers le Loch Ness. Visez un hôtel <b>près de la gare</b> pour rayonner sans louer de voiture.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Inverness%2C+Ecosse"
+    },
+    {
+      "profile": "Randonnée & sommets",
+      "neighborhood": "Fort William",
+      "reason": "Au pied du Ben Nevis et de la West Highland Way. Cherchez un <b>B&B avec séchoir et parking</b> pour enchaîner les sorties par tous les temps.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Fort+William%2C+Ecosse"
+    },
+    {
+      "profile": "Familles & nature",
+      "neighborhood": "Aviemore",
+      "reason": "Le parc des Cairngorms, ses activités et ses forêts à portée de poussette. Un <b>chalet ou lodge</b> vous met au vert avec une fraîcheur assurée tout l'été.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Aviemore%2C+Ecosse"
+    },
+    {
+      "profile": "Paysages spectaculaires",
+      "neighborhood": "Île de Skye",
+      "reason": "Les décors les plus grandioses d'Écosse, avec Portree pour dormir. Réservez <b>très à l'avance en été</b> : l'île est petite et très demandée.",
+      "affiliate_url": "https://www.booking.com/searchresults.fr.html?ss=Portree%2C+Skye"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Fait-il chaud dans les Highlands en été ?",
+      "a": "Non, et c'est tout l'intérêt. La maximale moyenne de juillet tourne autour de 17 °C et dépasse rarement 20 °C. C'est la destination anti-canicule par excellence : on vient chercher le grand air et la fraîcheur, en acceptant un ciel changeant et de la pluie possible."
+    },
+    {
+      "q": "Faut-il une voiture pour les Highlands ?",
+      "a": "Oui, dès qu'on quitte Inverness. La ville est reliée en train et permet quelques excursions en bus, mais les glens, Skye et la côte ouest se découvrent en voiture. Prévoyez un véhicule pour un vrai road trip."
+    },
+    {
+      "q": "Quel secteur pour une première fois ?",
+      "a": "Inverness pour arriver facilement et voir le Loch Ness, ou Fort William pour la montagne. L'île de Skye est incontournable mais mérite d'être combinée avec l'un des deux, pas visitée à la journée."
+    },
+    {
+      "q": "Les Highlands, est-ce vraiment une coolcation ?",
+      "a": "C'est la version grand air : on troque le soleil constant contre une fraîcheur garantie et des paysages sauvages. Si vous voulez du soleil avec la fraîcheur, préférez la côte atlantique ou un lac alpin ; pour fuir totalement la chaleur, les Highlands sont imbattables."
+    }
+  ],
+  "related_slugs": ["donegal", "north-wales", "saint-malo"],
   "affiliate": {
-    "booking_search_url": ""
+    "booking_search_url": "https://www.booking.com/searchresults.fr.html?ss=Highlands%2C+Ecosse",
+    "hometogo_search_url": "https://www.hometogo.fr/highlands/"
   },
-  "updated": "2026-07-04",
+  "updated": "2026-07-06",
   "author": "La rédaction Cap au Frais",
-  "draft": true,
+  "draft": false,
   "hero_image": {
     "src": "/images/destinations/highlands-ecossais.jpg",
     "card": "/images/destinations/card/highlands-ecossais.jpg",
