@@ -51,13 +51,22 @@ function splitStat(point: string): { num: string; lab: string } {
   return m ? { num: m[1].trim(), lab: m[2] } : { num: '', lab: point };
 }
 
-// Note du thermomètre (cadrage "zone de confort") : autant de soleil que le Sud, sans les pics
-// de canicule. Le complément "brise" n'apparaît que si une valeur fiable est renseignée (littoral).
+// Note du thermomètre (cadrage "zone de confort"). Le message s'adapte à l'ensoleillement :
+// destinations lumineuses = "autant de soleil que le Sud" ; destinations plus fraîches et au ciel
+// changeant (îles Britanniques) = "grand air". Le complément "brise" n'apparaît que si une valeur
+// de brise fiable est renseignée (littoral).
+const sunny = (c.sun_hours_year ?? 0) >= 1800;
+const thermoBase = sunny
+  ? 'Autant de soleil que le Sud, sans les pics à 32-35 °C des étés en canicule'
+  : 'Un été vraiment frais et du grand air, à mille lieues des canicules du Sud';
 const thermoNote =
   c.july_max_avg != null
-    ? 'Autant de soleil que le Sud, sans les pics à 32-35 °C des étés en canicule' +
-      (c.breeze_kmh != null ? ', et une brise qui rafraîchit les après-midis.' : '.')
+    ? thermoBase + (c.breeze_kmh != null ? ', et une brise qui rafraîchit les après-midis.' : '.')
     : '';
+
+// Libellé des zones (quartier / secteur) et son pluriel.
+const areaLabel = dest.area_label;
+const areaPlural = `${areaLabel}s`;
 
 const hotels = hotelsFor(dest.slug);
 
@@ -125,10 +134,10 @@ const jsonLd = [touristDestination(dest)];
     <div class="wrap">
       <div class="sec-head reveal">
         <p class="eyebrow">L'essentiel</p>
-        <h2>Quel quartier selon votre façon de voyager ?</h2>
+        <h2>Où loger selon votre façon de voyager ?</h2>
         <p>
-          Pas de « top 10 des hôtels ». La vraie question, c'est <i>où</i> loger pour que le séjour
-          colle à vos envies. Voici notre lecture par profil.
+          Pas de « top 10 des hôtels ». La vraie question, c'est <i>où</i> poser vos valises pour que
+          le séjour colle à vos envies. Voici notre lecture par profil.
         </p>
       </div>
       <div class="profiles">
@@ -153,8 +162,8 @@ const jsonLd = [touristDestination(dest)];
         <div class="wrap">
           <div class="sec-head reveal">
             <p class="eyebrow">En détail</p>
-            <h2>Les {dest.neighborhoods.length} quartiers, comparés</h2>
-            <p>Ambiance, à qui ça convient, et ce qui est accessible à pied.</p>
+            <h2>Les {dest.neighborhoods.length} {areaPlural}, comparés</h2>
+            <p>Ambiance, à qui ça convient, et ce qu'il y a autour.</p>
           </div>
           <div class="hoods reveal">
             {dest.neighborhoods.map((n) => (

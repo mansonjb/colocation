@@ -25,7 +25,7 @@ const OUT = join(ROOT, 'src', 'data', 'hotels.generated.json');
 
 const PER = 12; // lieux crawlés par ville (facturés)
 const KEEP = 6; // hôtels gardés par ville
-const RADIUS_KM = 25; // on veut la ville, pas la région
+const DEFAULT_RADIUS_KM = 25; // ville : on veut la ville ; région : surchargé via hotel_radius_km
 const RUN_BUDGET_USD = 3; // dépense max autorisée POUR CE RUN (relatif à l'usage de départ)
 
 const slugify = (s) =>
@@ -103,7 +103,8 @@ for (const d of dests) {
       if (!isHotel(p.categoryName)) continue;
       const loc = p.location;
       if (!p.title || !loc?.lat) continue;
-      if (km(d.coordinates.lat, d.coordinates.lng, loc.lat, loc.lng) > RADIUS_KM) continue;
+      const radius = d.hotel_radius_km ?? DEFAULT_RADIUS_KM;
+      if (km(d.coordinates.lat, d.coordinates.lng, loc.lat, loc.lng) > radius) continue;
       const hslug = slugify(p.title);
       if (seen.has(hslug)) continue;
       seen.add(hslug);

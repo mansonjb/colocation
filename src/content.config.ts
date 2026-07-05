@@ -36,6 +36,8 @@ const destinations = defineCollection({
       .default({ lat: null, lng: null }),
     hero_tagline: z.string().default(''),
     intro: z.string().default(''),
+    // Libellé des zones : "quartier" (ville) ou "secteur" (région). Pluriel = +"s".
+    area_label: z.string().default('quartier'),
     hero_image: z
       .object({
         src: z.string(), // /images/destinations/{slug}.jpg (hero)
